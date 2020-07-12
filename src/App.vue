@@ -10,8 +10,8 @@ export default {
     return {
       authenticated: false,
       mockAccount: {
-        username: "vrdeclub",
-        password: "12345678"
+        username: "mayorista",
+        password: "puerro"
       }
     };
   },
