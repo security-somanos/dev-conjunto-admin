@@ -18,9 +18,16 @@
 
       <div class="productBox">
         <div class="prodType"></div>
+        <label for="cantidad">Cantidad Mayorista</label>
+        <input id="cantidad" type="text" v-model="cantidad" />
+      </div>
+
+      <div class="productBox">
+        <div class="prodType"></div>
         <label for="nameP">Productor</label>
         <input id="nameP" type="text" v-model="productor" />
       </div>
+      
       
       <div class="productBox">
         <input
@@ -41,6 +48,17 @@
           <option value="vinos" >Vinos</option>
           <option value="medicina" >Medicina</option>
           <option value="comida" >Comida</option>
+        </select>
+      </div>
+      <div class="productBox">
+        <select id="unidadM" v-model="unidadM">
+          <option disabled value>Unidad Mayorista</option>
+          <option value="Kg" >Kg</option>
+          <option value="Gr" >Gr</option>
+          <option value="Caja" >Caja</option>
+          <option value="Cajon" >Cajon</option>
+          <option value="Jaula" >Jaula</option>
+          <option value="Unidad" >Unidad</option>
         </select>
       </div>
       <div class="productBox">
@@ -98,7 +116,9 @@
           <img class="productImage" :src="product.image" alt />
           <div class="box product">{{product.name}}</div>
           <div class="box product">{{product.productor}}</div>
+          <div class="box product">{{product.cantidad}}</div>
           <div class="box category">Cat: {{product.type}}</div>
+          <div class="box category">Medida: {{product.unidadM}}</div>
           <div class="box price">Precio Mayorista: ${{product.price}}</div>
           <div class="box price">Precio Costo: ${{product.priceCost}}</div>
           <div class="box stock">Stock: {{product.stock}}</div>
@@ -114,6 +134,10 @@
             <input id="nameP" type="text" v-model="product.productor" />
           </div>
           <div class="element">
+            <label for="cantidad">Cantidad Mayorista</label>
+            <input id="cantidad" type="text" v-model="product.cantidad" />
+          </div>
+          <div class="element">
             <label for="image">Image Url</label>
             <input id="image" type="text" v-model="product.image" />
           </div>
@@ -127,6 +151,18 @@
               <option>vinos</option>
               <option>medicina</option>
               <option>comida</option>
+            </select>
+          </div>          
+          <div class="element">
+            <label for="category">Uni/Mayorista</label>
+            <select v-model="product.unidadM">
+              <option disabled value>Unidad</option>
+              <option>Kg</option>
+              <option>Gr</option>
+              <option>Caja</option>
+              <option>Cajon</option>
+              <option>Jaula</option>
+              <option>Unidad</option>
             </select>
           </div>
           <div class="element">
@@ -171,7 +207,9 @@ export default {
     return {
       search: "",
       name: "",
+      unidadM: "",
       productor: "",
+      cantidad: 0,
       edit: false,
       image: "",
       type: "",
@@ -218,6 +256,8 @@ export default {
       productsRef.push({
         search: "",
         name: this.name,
+        cantidad: this.cantidad,
+        unidadM: this.unidadM,
         edit: false,
         image: this.image,
         type: this.type,
@@ -229,6 +269,8 @@ export default {
         amount: 0
       });
       this.name = "";
+      this.cantidad= "";
+      this.unidadM= "";
       this.image = "";
       this.type = "";
       this.price = "";
@@ -264,7 +306,9 @@ export default {
       const key = product[".key"];
       productsRef.child(key).set({
         name: product.name,
+        cantidad: product.cantidad,
         edit: false,
+        unidadM: product.unidadM,
         image: product.image,
         type: product.type,
         price: product.price,
@@ -309,7 +353,7 @@ export default {
 input {
   padding: 5px;
 }
-input#price,input#priceC
+input#price,input#priceC,input#cantidad,
 input#stock {
   padding: 5px;
   width: 40px;
@@ -602,7 +646,7 @@ select {
     border-right: 10px solid transparent;
   }
 
-  #category {
+  #category ,  #unidadM{
     margin-left: 20px;
     position: relative;
     top: 10px;
