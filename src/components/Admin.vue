@@ -15,6 +15,13 @@
         <label for="name">Nombre</label>
         <input id="name" type="text" v-model="name" />
       </div>
+    <div class="addProduct">
+      <div class="productBox">
+        <div class="prodType"></div>
+        <label for="name">Productor</label>
+        <input id="name" type="text" v-model="productor" />
+      </div>
+      
       <div class="productBox">
         <input
           id="image"
@@ -62,6 +69,7 @@
         <select id="prodType" v-model="prodType">
           <option disabled value>Ordenar por</option>
           <option value="name">Nombre</option>
+          <option value="productor">Productor</option>
           <option value="stock">Stock</option>
           <option value="type">Categoria</option>
           <option value="active">Active</option>
@@ -89,6 +97,7 @@
         <div class="static" v-if="!product.edit">
           <img class="productImage" :src="product.image" alt />
           <div class="box product">{{product.name}}</div>
+          <div class="box product">{{product.productor}}</div>
           <div class="box category">Cat: {{product.type}}</div>
           <div class="box price">Precio Mayorista: ${{product.price}}</div>
           <div class="box price">Precio Costo: ${{product.priceCost}}</div>
@@ -99,6 +108,10 @@
           <div class="element">
             <label for="name">Name</label>
             <input id="name" type="text" v-model="product.name" />
+          </div>
+          <div class="element">
+            <label for="name">Productor</label>
+            <input id="name" type="text" v-model="product.productor" />
           </div>
           <div class="element">
             <label for="image">Image Url</label>
@@ -158,6 +171,7 @@ export default {
     return {
       search: "",
       name: "",
+      productor: "",
       edit: false,
       image: "",
       type: "",
