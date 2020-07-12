@@ -15,11 +15,11 @@
         <label for="name">Nombre</label>
         <input id="name" type="text" v-model="name" />
       </div>
-    <div class="addProduct">
+
       <div class="productBox">
         <div class="prodType"></div>
-        <label for="name">Productor</label>
-        <input id="name" type="text" v-model="productor" />
+        <label for="nameP">Productor</label>
+        <input id="nameP" type="text" v-model="productor" />
       </div>
       
       <div class="productBox">
@@ -49,7 +49,7 @@
       </div>
       <div class="productBox">
         <label for="price">Precio Costo</label>
-        <input id="price" type="text" v-model="priceCost" />
+        <input id="priceC" type="text" v-model="priceCost" />
       </div>
       
       <div class="productBox">
@@ -110,8 +110,8 @@
             <input id="name" type="text" v-model="product.name" />
           </div>
           <div class="element">
-            <label for="name">Productor</label>
-            <input id="name" type="text" v-model="product.productor" />
+            <label for="nameP">Productor</label>
+            <input id="nameP" type="text" v-model="product.productor" />
           </div>
           <div class="element">
             <label for="image">Image Url</label>
@@ -134,8 +134,8 @@
             <input id="price" type="text" v-model="product.price" />
           </div>
          <div class="element">
-            <label for="price">Precio Costo</label>
-            <input id="price" type="text" v-model="product.priceCost" />
+            <label for="priceP">Precio Costo</label>
+            <input id="priceP" type="text" v-model="product.priceCost" />
           </div>
           <div class="element">
             <label for="stock">Stock</label>
@@ -309,7 +309,7 @@ export default {
 input {
   padding: 5px;
 }
-input#price,
+input#price,input#priceC
 input#stock {
   padding: 5px;
   width: 40px;
@@ -556,7 +556,7 @@ select {
   input {
     padding: 5px;
   }
-  input#price,
+  input#price,input#priceC,
   input#stock {
     padding: 5px;
     width: 40px;

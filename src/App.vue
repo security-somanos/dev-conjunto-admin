@@ -11,7 +11,7 @@ export default {
       authenticated: false,
       mockAccount: {
         username: "mayorista",
-        password: "puerro"
+        password: "puerro",
       }
     };
   },
