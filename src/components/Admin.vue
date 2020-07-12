@@ -37,9 +37,14 @@
         </select>
       </div>
       <div class="productBox">
-        <label for="price">Price</label>
+        <label for="price">Precio Mayorista</label>
         <input id="price" type="text" v-model="price" />
       </div>
+      <div class="productBox">
+        <label for="price">Precio Costo</label>
+        <input id="price" type="text" v-model="priceCost" />
+      </div>
+      
       <div class="productBox">
         <div class="prodType"></div>
         <label for="stock">Stock</label>
@@ -85,7 +90,8 @@
           <img class="productImage" :src="product.image" alt />
           <div class="box product">{{product.name}}</div>
           <div class="box category">Cat: {{product.type}}</div>
-          <div class="box price">Precio: ${{product.price}}</div>
+          <div class="box price">Precio Mayorista: ${{product.price}}</div>
+          <div class="box price">Precio Costo: ${{product.priceCost}}</div>
           <div class="box stock">Stock: {{product.stock}}</div>
           <button class="greenBtn" @click="setEditName(product.name, product['.key'])">Edit</button>
         </div>
@@ -111,8 +117,12 @@
             </select>
           </div>
           <div class="element">
-            <label for="price">Price</label>
+            <label for="price">Precio Mayorista</label>
             <input id="price" type="text" v-model="product.price" />
+          </div>
+         <div class="element">
+            <label for="price">Precio Costo</label>
+            <input id="price" type="text" v-model="product.priceCost" />
           </div>
           <div class="element">
             <label for="stock">Stock</label>
@@ -152,6 +162,7 @@ export default {
       image: "",
       type: "",
       price: 0,
+      priceCost: 0,
       stock: 0,
       active: true,
       customMessages: ["Borrar", "Estas seguro?","Exito"],
@@ -196,7 +207,9 @@ export default {
         edit: false,
         image: this.image,
         type: this.type,
+        productor: this.productor,
         price: this.price,
+        priceCost: this.priceCost,
         stock: this.stock,
         active: this.active,
         amount: 0
@@ -205,6 +218,8 @@ export default {
       this.image = "";
       this.type = "";
       this.price = "";
+      this.priceCost = "";
+      this.productor = "";
       this.stock = 0;
       this.active = false;
     },
@@ -239,7 +254,9 @@ export default {
         image: product.image,
         type: product.type,
         price: product.price,
+        priceCost: product.priceCost,
         stock: product.stock,
+        productor: product.productor,
         active: product.active,
         amount: 0
       });

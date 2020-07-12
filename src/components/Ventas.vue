@@ -144,7 +144,7 @@
 import { db } from "../firebase";
 import Vue2Filters from "vue2-filters";
 import VueConfirmationButton from "vue-confirmation-button";
-const salesRef = db.ref("salesElConjunto");
+const salesRef = db.ref("sales/mayorista");
 
 export default {
   data() {

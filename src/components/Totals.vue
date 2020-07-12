@@ -29,7 +29,7 @@
 <script>
 import { db } from "../firebase";
 import Vue2Filters from "vue2-filters";
-const salesRef = db.ref("salesElConjunto");
+const salesRef = db.ref("sales/mayorista");
 
 export default {
   data() {
