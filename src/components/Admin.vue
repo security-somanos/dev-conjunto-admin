@@ -398,6 +398,7 @@ select {
   box-shadow: 0 0px 4px rgba(0, 0, 0, 0.16);
   padding: 20px 10px;
   border-left: 2px solid #a53179;
+  flex-wrap: wrap  ;
 }
 .addProduct .productBox {
   display: flex;
