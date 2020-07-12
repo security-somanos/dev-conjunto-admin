@@ -1,0 +1,1023 @@
+{
+    "-LtU-EOnVKv6ipizuNp_" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "anco.jpg",
+      "name" : "Anco (kg)",
+      "price" : "75",
+      "stock" : 0,
+      "type" : "verdura"
+    },
+    "-LtU-EOnVKv6ipizuNpb" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "banana.jpg",
+      "name" : "Banana (kg)",
+      "price" : "115",
+      "stock" : 0,
+      "type" : "fruta"
+    },
+    "-LtU-EOoKn6zPic0sre3" : {
+      "active" : false,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "brocoli.jpg",
+      "name" : "Brocoli (Paq)",
+      "price" : "85",
+      "stock" : 0,
+      "type" : "verdura"
+    },
+    "-LtU-EOoKn6zPic0sre5" : {
+      "active" : false,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "coliflor.jpg",
+      "name" : "Coliflor (u)",
+      "price" : "70",
+      "stock" : 0,
+      "type" : "verdura"
+    },
+    "-LtU-EOoKn6zPic0sre6" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "espinaca.jpg",
+      "name" : "Espinaca (Paq)",
+      "price" : "75",
+      "stock" : 0,
+      "type" : "verdura"
+    },
+    "-LtU-EOpou4yXhT7adWR" : {
+      "active" : false,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "hinojo.jpg",
+      "name" : "Hinojo (u)",
+      "price" : "40",
+      "stock" : 0,
+      "type" : "verdura"
+    },
+    "-LtU-EOpou4yXhT7adWS" : {
+      "active" : false,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "kalemorado.jpg",
+      "name" : "Kale Morado Rizado (Paq)",
+      "price" : "75",
+      "stock" : 0,
+      "type" : "verdura"
+    },
+    "-LtU-EOpou4yXhT7adWT" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "kale.jpg",
+      "name" : "Kale Verde (Paq)",
+      "price" : "75",
+      "stock" : 0,
+      "type" : "verdura"
+    },
+    "-LtU-EOpou4yXhT7adWU" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "lechugacrespa.jpg",
+      "name" : "Lechuga Criolla (1/2kg)",
+      "price" : "70",
+      "stock" : 0,
+      "type" : "verdura"
+    },
+    "-LtU-EOq4zM_wzh6UhgF" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "limon.jpg",
+      "name" : "Limón (kg)",
+      "price" : "85",
+      "stock" : 0,
+      "type" : "fruta"
+    },
+    "-LtU-EOq4zM_wzh6UhgH" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "mandarina.jpg",
+      "name" : "Mandarina (kg)",
+      "price" : "85",
+      "stock" : 0,
+      "type" : "fruta"
+    },
+    "-LtU-EOq4zM_wzh6UhgI" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "naranja.jpg",
+      "name" : "Naranja (kg)",
+      "price" : "85",
+      "stock" : 0,
+      "type" : "fruta"
+    },
+    "-LtU-EOrRVtetRsGtTSv" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "palta.jpg",
+      "name" : "Palta Promo x 2",
+      "price" : "140",
+      "stock" : 0,
+      "type" : "fruta"
+    },
+    "-LtU-EOrRVtetRsGtTSw" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "pomelo.jpg",
+      "name" : "Pomelo (kg)",
+      "price" : "110",
+      "stock" : 0,
+      "type" : "fruta"
+    },
+    "-LtU-EOrRVtetRsGtTSx" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "pera.jpeg",
+      "name" : "Pera (kg)",
+      "price" : "85",
+      "stock" : 0,
+      "type" : "fruta"
+    },
+    "-LtU-EOsZ2uYALB_Rxf_" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "perejil.jpg",
+      "name" : "Perejil (Paq)",
+      "price" : "60",
+      "stock" : 0,
+      "type" : "verdura"
+    },
+    "-LtU-EOsZ2uYALB_Rxfa" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "puerro.jpg",
+      "name" : "Puerro (Paq)",
+      "price" : "70",
+      "stock" : 0,
+      "type" : "verdura"
+    },
+    "-LtU-EOsZ2uYALB_Rxfb" : {
+      "active" : false,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "rabanito.jpg",
+      "name" : "Rabanito (Paq)",
+      "price" : "60",
+      "stock" : 0,
+      "type" : "verdura"
+    },
+    "-LtU-EOsZ2uYALB_Rxfc" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "radicheta.jpg",
+      "name" : "Radicheta (Paq)",
+      "price" : "65",
+      "stock" : 0,
+      "type" : "verdura"
+    },
+    "-LtU-EOtt1D1bXnGWPPG" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "repollo.jpg",
+      "name" : "Repollo (kg)",
+      "price" : "85",
+      "stock" : 0,
+      "type" : "verdura"
+    },
+    "-LtU-EOtt1D1bXnGWPPH" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "remolacha.jpg",
+      "name" : "Remolacha (Paq)",
+      "price" : "75",
+      "stock" : 0,
+      "type" : "verdura"
+    },
+    "-LtU-EOua5NJ6KCqwVkO" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "rucula.jpg",
+      "name" : "Rucula (Paq)",
+      "price" : "65",
+      "stock" : 0,
+      "type" : "verdura"
+    },
+    "-LtU-EOua5NJ6KCqwVkP" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "sal.jpg",
+      "name" : "Sal Gruesa \"Kachy\" (kg)",
+      "price" : "60",
+      "stock" : 0,
+      "type" : "almacen"
+    },
+    "-LtU-EOua5NJ6KCqwVkQ" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "verdeo.jpg",
+      "name" : "Verdeo (Paq)",
+      "price" : "65",
+      "stock" : 0,
+      "type" : "verdura"
+    },
+    "-LtU-EOua5NJ6KCqwVkR" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "zanahoria.jpg",
+      "name" : "Zanahoria (kg)",
+      "price" : "110",
+      "stock" : 0,
+      "type" : "verdura"
+    },
+    "-LtU-EOua5NJ6KCqwVkS" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "jengibre.jpg",
+      "name" : "Jengibre (250g)",
+      "price" : "120",
+      "stock" : 0,
+      "type" : "almacen"
+    },
+    "-LtU-EOve2DfLdvRHzbf" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "Curcuma1.png",
+      "name" : "Cúrcuma (250g)",
+      "price" : "100",
+      "stock" : 0,
+      "type" : "almacen"
+    },
+    "-LtU-EOve2DfLdvRHzbg" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "portobello.jpg",
+      "name" : ".Portobello (250g)",
+      "price" : "160",
+      "stock" : 0,
+      "type" : "almacen"
+    },
+    "-LtU-EOve2DfLdvRHzbh" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "champi.jpg",
+      "name" : ".Champinon (250g)",
+      "price" : "160",
+      "stock" : 0,
+      "type" : "almacen"
+    },
+    "-LtU-EOve2DfLdvRHzbi" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "girgolas.jpg",
+      "name" : ".Girgolas (250g)",
+      "price" : "180",
+      "stock" : 0,
+      "type" : "almacen"
+    },
+    "-LtU-EOwHEwGAdU4Wnza" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "garbanzo.jpg",
+      "name" : "\"Salve la Tierra\" - Garbanzos (1/2kg)",
+      "price" : "75",
+      "stock" : 0,
+      "type" : "almacen"
+    },
+    "-LtU-EOwHEwGAdU4Wnzb" : {
+      "active" : false,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "mijo.jpg",
+      "name" : "_Mijo (1/2kg)",
+      "price" : "100",
+      "stock" : 0,
+      "type" : "almacen"
+    },
+    "-LtU-EOwHEwGAdU4Wnzc" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "lenteja.jpg",
+      "name" : "\"Salve la Tierra\" - Lentejas (1/2kg)",
+      "price" : "90",
+      "stock" : 0,
+      "type" : "almacen"
+    },
+    "-LtU-EOxTsz8DV0aJR_5" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "porotomung.jpg",
+      "name" : "\"Salve la Tierra\" - Poroto Mung (1/2kg)",
+      "price" : "90",
+      "stock" : 0,
+      "type" : "almacen"
+    },
+    "-LtU-EOxTsz8DV0aJR_6" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "porotocolorado.jpg",
+      "name" : "\"Salve la Tierra\" - Poroto Colorado (1/2kg)",
+      "price" : "90",
+      "stock" : 0,
+      "type" : "almacen"
+    },
+    "-LtU-EOxTsz8DV0aJR_7" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "porotonegro.jpg",
+      "name" : "\"Salve la Tierra\" - Poroto Negro (1/2kg)",
+      "price" : "90",
+      "stock" : 0,
+      "type" : "almacen"
+    },
+    "-LtU-EOxTsz8DV0aJR_8" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "avena.jpg",
+      "name" : "\"Salve la Tierra\" - Avena Arrollada Gruesa (1/2 kg)",
+      "price" : "100",
+      "stock" : 0,
+      "type" : "almacen"
+    },
+    "-LtU-EOyy-w4WulQrntG" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "arrozyamani.jpg",
+      "name" : "Arroz YamanI Integral (kg)",
+      "price" : "125",
+      "stock" : 0,
+      "type" : "almacen"
+    },
+    "-LtU-EOyy-w4WulQrntH" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "huevos.jpg",
+      "name" : "Huevos Maple (x30)",
+      "price" : "370",
+      "stock" : 0,
+      "type" : "almacen"
+    },
+    "-LtU-EOyy-w4WulQrntI" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "mieldelta1kg.jpg",
+      "name" : "Miel Pura del delta (kg)",
+      "price" : "300",
+      "stock" : 0,
+      "type" : "almacen"
+    },
+    "-LtU-EOyy-w4WulQrntJ" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "mieldeltamediokg.jpg",
+      "name" : "Miel Pura del delta (1/2kg)",
+      "price" : "200",
+      "stock" : 0,
+      "type" : "almacen"
+    },
+    "-LtU-EOz9QG1tNNt-Mgb" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "aceitunanegrakilo.jpeg",
+      "name" : "Aceitunas Negras \"Simone\" (1Kg)",
+      "price" : "550",
+      "stock" : 0,
+      "type" : "almacen"
+    },
+    "-LtU-EP-dIH9hi2o_5X4" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "aceitunagriegakilo.jpeg",
+      "name" : "Aceitunas Griegas \"Simone\" (1Kg)",
+      "price" : "550",
+      "stock" : 0,
+      "type" : "almacen"
+    },
+    "-LtU-EP-dIH9hi2o_5X5" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "aceiteoliva.jpeg",
+      "name" : "Aceite de Oliva \"Simone\" (1L)",
+      "price" : "550",
+      "stock" : 0,
+      "type" : "almacen"
+    },
+    "-LtU-EP1SF3XQd3c9jRy" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "maizpisingallo.jpg",
+      "name" : "\"Salve la Tierra\" - Maiz Pisingallo (1/2kg)",
+      "price" : "75",
+      "stock" : 0,
+      "type" : "almacen"
+    },
+    "-LtU-EP1SF3XQd3c9jS-" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "linomarron.jpg",
+      "name" : "\"Salve la Tierra\" - Lino Marron (1/2kg)",
+      "price" : "70",
+      "stock" : 0,
+      "type" : "almacen"
+    },
+    "-LtU-EP2CsMWiLdn8b13" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "chia.jpg",
+      "name" : "\"Salve la Tierra\" - Chia (1/2kg)",
+      "price" : "150",
+      "stock" : 0,
+      "type" : "almacen"
+    },
+    "-LtU-EP2CsMWiLdn8b14" : {
+      "active" : false,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "porotoadzuki.jpg",
+      "name" : "\"Salve la Tierra\" - Poroto Adzuki (kg)",
+      "price" : "160",
+      "stock" : 0,
+      "type" : "almacen"
+    },
+    "-LtU-EP3rv8Nr9HF9yAU" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "soja.jpg",
+      "name" : "\"Salve la Tierra\" - Poroto de Soja (1/2kg)",
+      "price" : "60",
+      "stock" : 0,
+      "type" : "almacen"
+    },
+    "-LtU-EP3rv8Nr9HF9yAV" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "alubia.jpg",
+      "name" : "\"Salve la Tierra\" - Poroto Alubia (1/2kg)",
+      "price" : "90",
+      "stock" : 0,
+      "type" : "almacen"
+    },
+    "-LtWqk3u2dFWs1WZVI3k" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "masamadresema.jpeg",
+      "name" : "Pan de Masa Madre (u)",
+      "price" : "200",
+      "stock" : 0,
+      "type" : "almacen"
+    },
+    "-Lu3KPq57KpVL-CxWOTt" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "zapallito.jpg",
+      "name" : "Zapallito (kg)",
+      "price" : "90",
+      "stock" : 0,
+      "type" : "verdura"
+    },
+    "-Lu3KXXNario80VjHZHO" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "zuchinni.jpg",
+      "name" : "Zuchini (kg)",
+      "price" : "85",
+      "stock" : 0,
+      "type" : "verdura"
+    },
+    "-Lvq7-SLQASauDU2E8sF" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "tomate.jpg",
+      "name" : "Tomate (Kg)",
+      "price" : "100",
+      "stock" : 0,
+      "type" : "fruta"
+    },
+    "-Lvq7PQ_gXw2o0W5wJhq" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "tomatecherry.jpg",
+      "name" : "Tomate Cherry (500g)",
+      "price" : "85",
+      "stock" : 0,
+      "type" : "fruta"
+    },
+    "-Lx-0qD5fB4VjK_hB7-l" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "papa.jpg",
+      "name" : "Papa (kg)",
+      "price" : "75",
+      "stock" : 0,
+      "type" : "verdura"
+    },
+    "-M0oRJUH8-QobB2p9wEB" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "aceitunaverdekilo.jpeg",
+      "name" : "Aceitunas Verdes \"Simone\" (1Kg)",
+      "price" : "550",
+      "stock" : 0,
+      "type" : "almacen"
+    },
+    "-M0oRSdUFQO379HjhmVr" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "batata.jpg",
+      "name" : "Batata  (kg)",
+      "price" : "80",
+      "stock" : 0,
+      "type" : "verdura"
+    },
+    "-M0omudFFYGEkvz36KA0" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "cebolla.jpg",
+      "name" : "Cebolla Blanca (kg)",
+      "price" : "75",
+      "stock" : 0,
+      "type" : "verdura"
+    },
+    "-M0omweIv_zrnx6bNxDK" : {
+      "active" : false,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "cebollamorada.jpg",
+      "name" : "Cebolla Morada (kg)",
+      "price" : "75",
+      "stock" : 0,
+      "type" : "verdura"
+    },
+    "-M0os8n4kUbOcJinwkbU" : {
+      "active" : false,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "lechuga.jpg",
+      "name" : "Lechuga Criolla (1/2kg)",
+      "price" : "70",
+      "stock" : 0,
+      "type" : "verdura"
+    },
+    "-M18xjgq7cTNabHUr8hA" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "acelga.jpg",
+      "name" : "Acelga (Paq)",
+      "price" : "65",
+      "stock" : 0,
+      "type" : "verdura"
+    },
+    "-M18y1c-FBh7M5LLBE61" : {
+      "active" : false,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "ajo.jpg",
+      "name" : "Ajo (100g)",
+      "price" : "50",
+      "stock" : 0,
+      "type" : "verdura"
+    },
+    "-M18zU6xGapytlxb3JUm" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "caboutie.jpg",
+      "name" : "Caboutia (kg)",
+      "price" : "60",
+      "stock" : 0,
+      "type" : "verdura"
+    },
+    "-M1Bv9KyQRohu8Aq90Zt" : {
+      "active" : false,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "pepino.jpg",
+      "name" : "Pepino (kg)",
+      "price" : "100",
+      "stock" : 0,
+      "type" : "verdura"
+    },
+    "-M1LxLyTtFY1JNo5ZXf5" : {
+      "active" : false,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "mango.jpg",
+      "name" : "Mango (kg)",
+      "price" : "170",
+      "stock" : 0,
+      "type" : "fruta"
+    },
+    "-M1LyJN_vlwlElndwnut" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "Albahaca.jpg",
+      "name" : "Albahaca (c/u)",
+      "price" : "65",
+      "stock" : 0,
+      "type" : "verdura"
+    },
+    "-M2-bhcVf4GrgEzKTPxc" : {
+      "active" : false,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "Lima.jpg",
+      "name" : "Lima (kg)",
+      "price" : "110",
+      "stock" : 0,
+      "type" : "fruta"
+    },
+    "-M2-gLZfEkAuQBwN7uHu" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "Boniato.jpg",
+      "name" : "Batata Zanahoria (kg)",
+      "price" : "90",
+      "stock" : 0,
+      "type" : "verdura"
+    },
+    "-M2DzHbFu4VwW0GmXKEA" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "Morron.jpg",
+      "name" : "Morrón Verde (kg)",
+      "price" : "80",
+      "stock" : 0,
+      "type" : "verdura"
+    },
+    "-M2DzOj4GpLETozIx_Cm" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "Morronrojo.jpg",
+      "name" : "Morrón Rojo (kg)",
+      "price" : "110",
+      "stock" : 0,
+      "type" : "verdura"
+    },
+    "-M2E17bRuSNndv1AdysG" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "Lechugamantecosa.jpg",
+      "name" : "Lechuga Mantecosa (1/2kg)",
+      "price" : "70",
+      "stock" : 0,
+      "type" : "verdura"
+    },
+    "-M33sxjiMcrQ2VA7tctn" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "manzana.jpg",
+      "name" : "Manzana Roja Gala (kg)",
+      "price" : "85",
+      "stock" : 0,
+      "type" : "fruta"
+    },
+    "-M33t15tXGXY_6mT9yYH" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "manzanaverde.jpg",
+      "name" : "Manzana Verde Granny (kg)",
+      "price" : "90",
+      "stock" : 0,
+      "type" : "fruta"
+    },
+    "-M349-ARlJjf6ZIIxOjE" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "harinaintegraldonpaisa.jpg",
+      "name" : "Harina Integral \"Don Paisa\" (kg)",
+      "price" : "120",
+      "stock" : 0,
+      "type" : "almacen"
+    },
+    "-M3497B-GsPLcVNKBqr3" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "Rebozadordonpaisa.jpg",
+      "name" : "Rebozador \"Don Paisa\" (kg)",
+      "price" : "150",
+      "stock" : 0,
+      "type" : "almacen"
+    },
+    "-M34Cv5slIMRMlUzsxea" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "pandearrozmaines.jpg",
+      "name" : "Pan de Arroz \"Maines\" (c/u)",
+      "price" : "200",
+      "stock" : 0,
+      "type" : "almacen"
+    },
+    "-M34p5CWSHco_VABvGaA" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "berenjena.jpg",
+      "name" : "Berenjena (Kg)",
+      "price" : "80",
+      "stock" : 0,
+      "type" : "verdura"
+    },
+    "-M3520h5hcg2VEpmMwkz" : {
+      "active" : false,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "morronamarillo.jpeg",
+      "name" : "Morron Amarillo (kg)",
+      "price" : "110",
+      "stock" : 0,
+      "type" : "verdura"
+    },
+    "-M42Jy1okO_02Xpa06O-" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "PanIntegralcin2.png",
+      "name" : "Pan Integral de Molde (uni)",
+      "price" : "150",
+      "stock" : 0,
+      "type" : "almacen"
+    },
+    "-M4KsX_uRaK-Pyxsxfi7" : {
+      "active" : false,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "nabo.jpg",
+      "name" : "Nabo ",
+      "price" : "70",
+      "stock" : 0,
+      "type" : "verdura"
+    },
+    "-M4KtX2DZzwa1gq8tjcC" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "taihang.jpg",
+      "name" : "Yerba \"Taihang\" (500g)",
+      "price" : "200",
+      "stock" : 0,
+      "type" : "almacen"
+    },
+    "-M4KvNHmuO1yJoT_p2nj" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "kiwi.jpg",
+      "name" : "Kiwi (kg)",
+      "price" : "280",
+      "stock" : 0,
+      "type" : "fruta"
+    },
+    "-M4f4EjJWMt2CazBVO6-" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "YerbaKalena.png",
+      "name" : "Yerba \"Bielakowicz\" (1kg)",
+      "price" : "350",
+      "stock" : 0,
+      "type" : "almacen"
+    },
+    "-M60n7OsAcbL5yt4-JMu" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "batata2.jpg",
+      "name" : ".PROMO Batata (3 kgs)",
+      "price" : "225",
+      "stock" : 0,
+      "type" : "verdura"
+    },
+    "-M60pH3FHcAB2Pp9MYQk" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "anco2.jpg",
+      "name" : ".PROMO Anco (3 kgs)",
+      "price" : "200",
+      "stock" : 0,
+      "type" : "verdura"
+    },
+    "-M6TMLh-8jSYZ31w3NH0" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "budinbananacin.jpg",
+      "name" : "Budín Integral Vegano de Banana (c/u)",
+      "price" : "200",
+      "stock" : 0,
+      "type" : "almacen"
+    },
+    "-M6TMWc2MwgnKof3fMM2" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "budinmanzanacin.jpg",
+      "name" : "Budín Integral Vegano de Manzana (c/u)",
+      "price" : "200",
+      "stock" : 0,
+      "type" : "almacen"
+    },
+    "-M6TPHq1gteN37xqmxZa" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "SalfinaKachy.jpg",
+      "name" : "Sal Fina \"Kachy\" (1/2kg)",
+      "price" : "45",
+      "stock" : 0,
+      "type" : "almacen"
+    },
+    "-M6fdNtsoMmnn9n-tTnQ" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "lecheagro.jpeg",
+      "name" : "Leche Agroecologica (1L)",
+      "price" : "150",
+      "stock" : 0,
+      "type" : "almacen"
+    },
+    "-M6fdXHOmpcGIkr2erYn" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "YogurtAgro.jpeg",
+      "name" : "Yogurt Natural Agroecologico (1L)",
+      "price" : "230",
+      "stock" : 0,
+      "type" : "almacen"
+    },
+    "-M6k5JBH8bESchNGSLAl" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "acelga.jpg",
+      "name" : ".PROMO Acelga (3 Paqs)",
+      "price" : "170",
+      "stock" : 0,
+      "type" : "verdura"
+    },
+    "-M6kPOKRsFp5rnNgyz2C" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "PolentaDelcampo.jpg",
+      "name" : "Polenta \"Del Campo\" (500g)",
+      "price" : "75",
+      "stock" : 0,
+      "type" : "almacen"
+    },
+    "-M6txPiKqRofRIT7ONx-" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "cajoncitoburns2.png",
+      "name" : ".Cajoncito Mix - Frutas & Verduras - (8kg)",
+      "price" : "650",
+      "stock" : 0,
+      "type" : "verdura"
+    },
+    "-M7E2JIMPXKidi6eQe0I" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "Hakusai.jpg",
+      "name" : "Hakusai 'Repollo Chino' (c/u) ",
+      "price" : "85",
+      "stock" : 0,
+      "type" : "verdura"
+    },
+    "-M7EEkwuBMjuYL1iPNPc" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "promocabu.jpg",
+      "name" : ".PROMO Caboutia (3 kgs)",
+      "price" : "150",
+      "stock" : 0,
+      "type" : "verdura"
+    },
+    "-M7OVAqcyG7djIDs_mGZ" : {
+      "active" : false,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "maizblanco.jpg",
+      "name" : "Maiz Blanco (u)",
+      "price" : "60",
+      "stock" : 0,
+      "type" : "verdura"
+    },
+    "-M7OZkpvNpqr30WinM8n" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "sesamo.jpg",
+      "name" : "\"Salve la Tierra\" - Sesamo (1/2kg)",
+      "price" : "125",
+      "stock" : 0,
+      "type" : "almacen"
+    },
+    "-M7UFnZDwYjwkPn_pZ2I" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "budinperajuan.jpeg",
+      "name" : "Budín Integral de Pera (c/u)",
+      "price" : "200",
+      "stock" : 0,
+      "type" : "almacen"
+    },
+    "-M7Urie82n6yHY_-9rei" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "APIO.JPG",
+      "name" : "Apio (u)",
+      "price" : "80",
+      "stock" : 0,
+      "type" : "verdura"
+    },
+    "-M7V-KbYi9u21ZZhDsu1" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "toronja.jpg",
+      "name" : "Toronja (Unidades gigantes dimensiones desconocidas)",
+      "price" : "85",
+      "stock" : 0,
+      "type" : "fruta"
+    },
+    "-M7evYVOBvKWMGmrDuKr" : {
+      "active" : true,
+      "amount" : 0,
+      "edit" : false,
+      "image" : "",
+      "name" : "",
+      "price" : 0,
+      "stock" : 0,
+      "type" : ""
+    }
+  }
+  
