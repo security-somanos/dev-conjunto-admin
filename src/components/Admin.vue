@@ -465,6 +465,7 @@ select {
   justify-content: space-around;
   padding: 10px;
   padding-left: 0px;
+  flex-wrap: wrap;
 }
 .edit .element {
   display: flex;
