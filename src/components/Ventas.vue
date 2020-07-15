@@ -1,6 +1,6 @@
 <template>
   <div id="portal">
-    <vue-headful title="Amigues - Pedidos" description="Ver todos los pedidos"/>
+    <vue-headful title="Mayorista - Pedidos" description="Ver todos los pedidos"/>
     <img
       style="height:100px;width:100px;margin:0 auto;margin-bottom:20px;"
       src="https://storage.cloud.google.com/el-conjunto.appspot.com/icons/logoconjuro.png"

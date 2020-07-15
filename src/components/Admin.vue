@@ -1,6 +1,6 @@
 <template>
   <div id="admin">
-   <vue-headful title="Amigues - Productos" description="Administrar productos"/>
+   <vue-headful title="Mayorista - Productos" description="Administrar productos"/>
     <img style="height:100px;width:100px;margin:20px auto;" src="https://storage.cloud.google.com/el-conjunto.appspot.com/icons/logoconjuro.png" alt="">
     <div id="nav">
       <router-link to="/admin">Productos</router-link>
@@ -9,7 +9,7 @@
       <router-link to="/login" id="logout" v-on:click.native="logout()" replace>Logout</router-link>
     </div>
     <h1>Admin</h1>
-    <div class="addProduct">
+  <div class="addProduct">
       <div class="productBox">
         <div class="prodType"></div>
         <label for="name">Nombre</label>
@@ -58,7 +58,7 @@
           <option value="Caja" >Caja</option>
           <option value="Cajon" >Cajon</option>
           <option value="Jaula" >Jaula</option>
-          <option value="Unidad" >Unidad</option>
+          <option value="Unidades" >Unidades</option>
         </select>
       </div>
       <div class="productBox">
@@ -80,7 +80,7 @@
         <input id="active" type="checkbox" v-model="active" />
       </div>
       <button id="addProduct" class="greenBtn" @click="onUpload()">Add</button>
-    </div>
+    </div> 
     <div class="search">
       <div class="reverse">
         <div class="reverseProdType" @click="reverseProdType($event, prodTypeReverse)"></div>
@@ -91,7 +91,6 @@
           <option value="stock">Stock</option>
           <option value="type">Categoria</option>
           <option value="active">Active</option>
-          <option value="search">Active</option>
         </select>
 
         <input type="Search" v-model="search" placeholder="buscar" />
@@ -156,13 +155,13 @@
           <div class="element">
             <label for="category">Uni/Mayorista</label>
             <select v-model="product.unidadM">
-              <option disabled value>Unidad</option>
+              <option disabled value>Unidades</option>
               <option>Kg</option>
               <option>Gr</option>
               <option>Caja</option>
               <option>Cajon</option>
               <option>Jaula</option>
-              <option>Unidad</option>
+              <option>Unidades</option>
             </select>
           </div>
           <div class="element">
@@ -324,8 +323,8 @@ export default {
     filteredProducts() {
       var self = this;
       return self.products.filter(
-        product => product.name && product.name.toLowerCase().indexOf(self.search) !== -1
-      );
+        product => product.name && product.name.toLowerCase().indexOf(self.search) !== -1 
+      );  
     }
   }
 };
@@ -675,7 +674,7 @@ select {
   }
 
   .addProduct {
-display: flex;
+    display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
@@ -699,7 +698,7 @@ display: flex;
     margin-bottom: 5px;
   }
 
-  .itemBin {
+  #admin.itemBin {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -712,7 +711,6 @@ display: flex;
     box-shadow: 0 5px 23px rgba(0, 0, 0, 0.16);
     padding: 0px;
     max-width: 250px;
-    height: 300px;
     border-radius: 10px;
     display: block;
     min-width: 250px;

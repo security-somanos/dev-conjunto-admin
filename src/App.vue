@@ -50,7 +50,7 @@ body {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-  max-width: 900px;
+  max-width: 1080px;
   margin: 0 auto;
 }
 
