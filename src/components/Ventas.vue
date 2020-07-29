@@ -19,7 +19,15 @@
     </div>
     <div class="sale" v-for="sale in filterBy(sales, search)" v-bind:key="sale['.key']">
       <div class="userData" @click="toggleCollapse($event)">
-        <div class="line"></div>
+    <div class="line status" >
+      <input type="radio" id="Pendiente" value="pendiente" v-model="sale[0].status" 
+        @change="updateUserInfo($event, sale['.key'], '0/status')">
+      <label for="Pendiente">Pendiente</label>
+        <input type="radio" id="Entregado" value="entregado" v-model="sale[0].status" 
+          @change="updateUserInfo($event, sale['.key'], '0/status')">
+        <label for="Entregado">Entregado</label>
+        </div>
+
         <div class="line date">
           <div class="lineTitle">Fecha</div>
           <input
@@ -97,15 +105,29 @@
             @change="updateUserInfo($event, sale['.key'], '0/preference')"
           ></textarea>
         </div>
-
-        <div class="line"></div>
+      
         <div class="items">
-          <div class="item" v-for="(item, index) in sale[0].items" v-bind:key="index">
-            <div class="row name">{{item.variedad}}</div>
+         <table id="pedido">
+           <tr>
+             <th>Nombre</th>
+             <th>Cantidad</th>
+             <th>Pago</th>
+             <th>Precio</th>
+           </tr>
+              <tr v-for="(item, index) in sale  [0].items" v-bind:key="index">
+                <td> {{item.variedad}}</td>
+                <td> {{item.cantidad}}  </td>
+                <td>{{item.pago}} </td>
+                <td>{{item.precio}} </td>
+              </tr>
+          </table>
+          </div>
+            <!-- <div class="row name">{{item.variedad}}</div> -->
+<!-- 
             <div class="row amount">
-              Cantidad :
               <input
                 type="text"
+                id="amount"
                 v-model="item.cantidad"
                 @change="updateItems($event, sale['.key'], index, 'cantidad', item, sale[0])"
               />
@@ -114,6 +136,7 @@
               Pago :
               <input
                 type="text"
+                id="numb"
                 v-model="item.pago"
                 @change="updateItems($event, sale['.key'], index, 'pago', item, sale[0])"
               />
@@ -122,12 +145,13 @@
               Precio :
               <input
                 type="text"
+                id="numb"
                 v-model="item.precio"
                 @change="updateItems($event, sale['.key'], index, 'precio', item, sale[0])"
               />
             </div>
           </div>
-        </div>
+        </div> -->
         <vue-confirmation-button
           class="rdBtn"
           ref="confirmationButton"
@@ -234,7 +258,35 @@ export default {
       });
       this.count = n;
       return this.totalSales;
-    }
+    },
+    // getTotal: function () {
+    //         var self = this;
+    //         var s = self.sales;
+    //         var c = {};
+    //         self.amountTotal = 0;
+    //   for (var i in s) {
+    //     var items = s[i][0].items;
+    //     for (var o in items) {
+    //       var name = items[o].variedad.toString();
+    //       self.amountTotal += parseInt(items[o].amount);
+    //       if (!c[name]) {
+    //         c[name] = 0;
+    //       }
+    //       c[name] += parseInt(items[o].cantidad);
+    //     }
+    //   }
+
+    //         this.cart = this.productList.filter(function (item) {
+    //             return item.total > 0;
+    //         });
+
+    //         for (var item in this.cart) {
+    //             this.cart[item].total = this.cart[item].amount
+    //             this.cart[item].total = parseFloat(this.cart[item].total.toFixed(2))
+    //             this.amountTotal += this.cart[item].total;
+    //             this.amountTotal = parseFloat(this.amountTotal.toFixed(2))
+    //         }
+    //     },
   }
 };
 </script>
@@ -258,7 +310,16 @@ export default {
   box-shadow: none;
   margin: 20px;
 }
-
+table{
+  border-collapse: collapse;
+}
+#pedido{
+  width: 100%;
+}
+#pedido th, #pedido td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
 .sale .userData:after {
   content: "";
   display: block;
@@ -272,6 +333,7 @@ export default {
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
 }
+
 .sale .userData.collapsed:after {
   border-bottom: 10px solid transparent;
   border-top: 10px solid #a53179;
@@ -310,6 +372,11 @@ export default {
   padding-left: 10px;
   color: #333;
   font-weight: bold;
+}
+.sale .userData .line.status {
+  color: black;
+  margin-bottom: 10px;
+  
 }
 .line {
   padding: 4px;
@@ -360,7 +427,7 @@ export default {
   flex: 1 100%;
 }
 .sale .userData .items .item .row {
-  padding: 4px;
+  padding: 1px;
   text-align: left;
 }
 
@@ -425,9 +492,15 @@ export default {
   margin-right: 2px;
   width: 200px;
 }
-
+input#numb{
+  color:green;
+  max-width: 38px;
+}
+input#amount{
+  max-width: 10px;
+}
 #portal .item input {
-  max-width: 70px;
+  max-width: 38px;
 }
 
 @media (max-width: 680px) {

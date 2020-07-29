@@ -2,6 +2,7 @@
   <div id="admin">
    <vue-headful title="Mayorista - Productos" description="Administrar productos"/>
     <img style="height:100px;width:100px;margin:20px auto;" src="https://storage.cloud.google.com/el-conjunto.appspot.com/icons/logoconjuro.png" alt="">
+    
     <div id="nav">
       <router-link to="/admin">Productos</router-link>
       <router-link to="/ventas">Pedidos</router-link>
@@ -9,25 +10,22 @@
       <router-link to="/login" id="logout" v-on:click.native="logout()" replace>Logout</router-link>
     </div>
     <h1>Admin</h1>
-  <div class="addProduct">
+
+    <div class="addProduct">
       <div class="productBox">
-        <div class="prodType"></div>
         <label for="name">Nombre</label>
         <input id="name" type="text" v-model="name" />
       </div>
 
       <div class="productBox">
-        <div class="prodType"></div>
         <label for="cantidad">Cantidad Mayorista</label>
         <input id="cantidad" type="text" v-model="cantidad" />
       </div>
 
       <div class="productBox">
-        <div class="prodType"></div>
         <label for="nameP">Productor</label>
         <input id="nameP" type="text" v-model="productor" />
       </div>
-      
       
       <div class="productBox">
         <input
@@ -39,6 +37,7 @@
         />
         <button @click="$refs.imageSelect.click()">Subir Imagen</button>
       </div>
+
       <div class="productBox">
         <select id="category" v-model="type">
           <option disabled value>Categoria</option>
@@ -50,6 +49,7 @@
           <option value="comida" >Comida</option>
         </select>
       </div>
+
       <div class="productBox">
         <select id="unidadM" v-model="unidadM">
           <option disabled value>Unidad Mayorista</option>
@@ -61,26 +61,36 @@
           <option value="Unidades" >Unidades</option>
         </select>
       </div>
+
       <div class="productBox">
         <label for="price">Precio Mayorista</label>
         <input id="price" type="text" v-model="price" />
       </div>
+
       <div class="productBox">
         <label for="price">Precio Costo</label>
         <input id="priceC" type="text" v-model="priceCost" />
       </div>
+
+      <div class="productBox">
+        <label for="priceMin">Precio Costo</label>
+        <input id="priceMin" type="text" v-model="priceMin" />
+      </div>
       
       <div class="productBox">
-        <div class="prodType"></div>
         <label for="stock">Stock</label>
         <input id="stock" type="text" v-model="stock" />
       </div>
+
       <div class="productBox">
         <label for="active">Active</label>
         <input id="active" type="checkbox" v-model="active" />
       </div>
+
       <button id="addProduct" class="greenBtn" @click="onUpload()">Add</button>
+
     </div> 
+
     <div class="search">
       <div class="reverse">
         <div class="reverseProdType" @click="reverseProdType($event, prodTypeReverse)"></div>
@@ -117,8 +127,10 @@
           <div class="box product">{{product.productor}}</div>
           <div class="box product">{{product.cantidad}}</div>
           <div class="box category">Cat: {{product.type}}</div>
-          <div class="box category">Medida: {{product.unidadM}}</div>
+          <div class="box category">Medida Mayorista: {{product.unidadM}}</div>
+          <div class="box category">Medida Minorista: {{product.unidadMin}}</div>
           <div class="box price">Precio Mayorista: ${{product.price}}</div>
+          <div class="box price">Precio Minorista: ${{product.priceMin}}</div>
           <div class="box price">Precio Costo: ${{product.priceCost}}</div>
           <div class="box stock">Stock: {{product.stock}}</div>
           <button class="greenBtn" @click="setEditName(product.name, product['.key'])">Edit</button>
@@ -163,10 +175,26 @@
               <option>Jaula</option>
               <option>Unidades</option>
             </select>
+          </div>      
+          <div class="element">
+            <label for="category">Uni/Minorista</label>
+            <select v-model="product.unidadMin">
+              <option disabled value>Unidades</option>
+              <option>Kg</option>
+              <option>Gr</option>
+              <option>Caja</option>
+              <option>Cc</option>
+              <option>Lt</option>
+              <option>Unidad</option>
+            </select>
           </div>
           <div class="element">
             <label for="price">Precio Mayorista</label>
             <input id="price" type="text" v-model="product.price" />
+          </div>
+          <div class="element">
+            <label for="priceM">Precio Minorista</label>
+            <input id="priceM" type="text" v-model="product.priceMin" />
           </div>
          <div class="element">
             <label for="priceP">Precio Costo</label>
@@ -207,6 +235,7 @@ export default {
       search: "",
       name: "",
       unidadM: "",
+      unidadMin: "",
       productor: "",
       cantidad: 0,
       edit: false,
@@ -214,6 +243,7 @@ export default {
       type: "",
       price: 0,
       priceCost: 0,
+      priceMin: 0,
       stock: 0,
       active: true,
       customMessages: ["Borrar", "Estas seguro?","Exito"],
@@ -257,12 +287,14 @@ export default {
         name: this.name,
         cantidad: this.cantidad,
         unidadM: this.unidadM,
+        unidadMin: this.unidadMin,
         edit: false,
         image: this.image,
         type: this.type,
         productor: this.productor,
         price: this.price,
         priceCost: this.priceCost,
+        priceMin: this.priceMin,
         stock: this.stock,
         active: this.active,
         amount: 0
@@ -308,6 +340,7 @@ export default {
         cantidad: product.cantidad,
         edit: false,
         unidadM: product.unidadM,
+        unidadMin: product.unidadMin,
         image: product.image,
         type: product.type,
         price: product.price,
