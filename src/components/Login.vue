@@ -47,7 +47,7 @@ export default {
   width: 500px;
   background-color: #ffffff;
   margin: auto;
-  margin-top: 200px;
+  margin-top: 50px;
   padding: 20px;
 }
 input {

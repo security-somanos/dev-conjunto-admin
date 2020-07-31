@@ -88,6 +88,14 @@
             @change="updateUserInfo($event, sale['.key'], '0/total')"
           />
         </div>
+        <!-- <div class="line total">
+          <div class="lineTitle">Total Cantidad</div>
+          <input
+            type="text"
+            v-model="sale[0].totalAmount"
+            @change="updateUserInfo($event, sale['.key'], '0/totalAmount')"
+          />
+        </div> -->
         <div class="line pago">
           <div class="lineTitle">Pago</div>
           <input
@@ -106,61 +114,65 @@
           ></textarea>
         </div>
       
+              <!-- <tr v-for="(item, index) in sale [0].items" v-bind:key="index">
+                <td > {{item.variedad}} </td>
+                <td contenteditable="true"> {{item.cantidad}}  </td>
+                <td > {{item.pago}} </td>
+                <td > {{item.precio}} </td>
+              </tr> -->
+
         <div class="items">
          <table id="pedido">
-           <tr>
-             <th>Nombre</th>
-             <th>Cantidad</th>
-             <th>Pago</th>
-             <th>Precio</th>
-           </tr>
-              <tr v-for="(item, index) in sale  [0].items" v-bind:key="index">
-                <td> {{item.variedad}}</td>
-                <td> {{item.cantidad}}  </td>
-                <td>{{item.pago}} </td>
-                <td>{{item.precio}} </td>
-              </tr>
-          </table>
-          </div>
-            <!-- <div class="row name">{{item.variedad}}</div> -->
-<!-- 
-            <div class="row amount">
-              <input
-                type="text"
-                id="amount"
-                v-model="item.cantidad"
-                @change="updateItems($event, sale['.key'], index, 'cantidad', item, sale[0])"
-              />
-            </div>
-            <div class="row payment">
-              Pago :
-              <input
+          <tr>
+           <th>Nombre</th>
+           <th>Cantidad</th>
+           <th>Pago</th>
+           <th colspan="2">Precio May.</th>
+          </tr>
+          <tr v-for="(item, index) in sale [0].items" v-bind:key="index" >
+            <td>
+              {{item.variedad}}
+            </td>
+            <td>
+              <div class="row amount">
+                <input
+                  type="text"
+                  id="amount"
+                  v-model="item.cantidad"
+                  @change="updateItems($event, sale['.key'], index, 'cantidad', item, sale[0])"/>
+               </div>
+            </td>
+            <td> 
+             <div class="row payment">
+                <input
                 type="text"
                 id="numb"
                 v-model="item.pago"
-                @change="updateItems($event, sale['.key'], index, 'pago', item, sale[0])"
-              />
-            </div>
-            <div class="row price">
-              Precio :
-              <input
+                @change="updateItems($event, sale['.key'], index, 'pago', item, sale[0])"/>
+              </div>
+            <td/>
+            <td>
+              <div class="row price">
+                <input
                 type="text"
-                id="numb"
+                id="price"
                 v-model="item.precio"
-                @change="updateItems($event, sale['.key'], index, 'precio', item, sale[0])"
-              />
-            </div>
-          </div>
-        </div> -->
-        <vue-confirmation-button
-          class="rdBtn"
-          ref="confirmationButton"
-          :messages="customMessages"
-          v-on:confirmation-success="removeSale(sale['.key'])"
-        ></vue-confirmation-button>
+                @change="updateItems($event, sale['.key'], index, 'precio', item, sale[0])"/>
+              </div>
+            </td>           
+          </tr>
+        </table>
       </div>
+           <vue-confirmation-button
+            class="rdBtn"
+            ref="confirmationButton"
+            :messages="customMessages"
+            v-on:confirmation-success="removeSale(sale['.key'])"> 
+            </vue-confirmation-button>
     </div>
     <button style="margin-bottom:40px;" @click="scrollTop">Volver</button>
+          </div>
+           
   </div>
 </template>
 
@@ -211,18 +223,23 @@ export default {
     updateItems(event, key, index, name, item, sale) {
       var n = "0/items/" + index + "/" + name;
       var p = "0/items/" + index + "/pago";
+
       if (name == "cantidad") {
         item.pago = item.precio * item.cantidad;
       }
+
       var saleTotal = 0;
+
       for (var i in sale.items) {
         saleTotal += parseInt(sale.items[i].pago);
       }
+
       let updateObject = {
         "0/total": saleTotal,
         [p]: item.pago,
         [n]: event.target.value
       };
+
       salesRef.child(key).update(updateObject);
     },
     toggleCollapse(event) {
@@ -292,6 +309,7 @@ export default {
 </script>
 
 <style scoped>
+
 .confirmation__button {
   background: #cf2218;
   font-weight: 700;
@@ -394,13 +412,6 @@ table{
   width: 70px;
 }
 
-#portal {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 .count {
   min-height: 150px;
   flex-wrap: wrap;
@@ -493,6 +504,10 @@ table{
   width: 200px;
 }
 input#numb{
+  color:green;
+  max-width: 38px;
+}
+input#price{
   color:green;
   max-width: 38px;
 }

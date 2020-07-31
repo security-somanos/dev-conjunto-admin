@@ -1,8 +1,8 @@
 <template>
+  
   <div id="admin">
    <vue-headful title="Mayorista - Productos" description="Administrar productos"/>
     <img style="height:100px;width:100px;margin:20px auto;" src="https://storage.cloud.google.com/el-conjunto.appspot.com/icons/logoconjuro.png" alt="">
-    
     <div id="nav">
       <router-link to="/admin">Productos</router-link>
       <router-link to="/ventas">Pedidos</router-link>
@@ -256,7 +256,7 @@ export default {
     };
   },
   components: {
-    "vue-confirmation-button": vueConfirmationButton
+    "vue-confirmation-button": vueConfirmationButton,
   },
   firebase: {
     products: productsRef

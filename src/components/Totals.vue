@@ -126,13 +126,6 @@ export default {
   width: 70px;
 }
 
-#portal {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 .count {
   min-height: 150px;
   flex-wrap: wrap;

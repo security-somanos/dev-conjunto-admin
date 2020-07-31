@@ -66,13 +66,18 @@
   font-weight: 700;
   color: #ffffff;
   border-radius: 50px;
-  height: 20px;
+  height: 30px;
   min-width: 50px;
   outline: 0;
   cursor: pointer;
   text-transform: capitalize;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   transition: background 0.3s ease-in, min-width 0.1s linear,
     box-shadow 0.2s ease-in;
+  position: relative;
+  left: 0px;
+  box-shadow: none;
+  margin: 20px;
 }
   .confirmation__button.confirmation__button--complete {
     cursor: not-allowed;

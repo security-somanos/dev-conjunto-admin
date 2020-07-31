@@ -1,11 +1,21 @@
 <template>
   <div id="app">
+    <HomeNavigation></HomeNavigation>
     <router-view @authenticated="setAuthenticated" />
   </div>
 </template>
 
 <script>
+
+import Navigation from '@/components/Navigation'
+import HomeNavigation from '@/components/HomeNavigation'
+
 export default {
+  name: 'App',
+  components: {
+    'Navigation': Navigation,
+    'HomeNavigation': HomeNavigation
+  },  
   data() {
     return {
       authenticated: false,
@@ -52,6 +62,13 @@ body {
   margin-top: 60px;
   max-width: 1080px;
   margin: 0 auto;
+}
+#portal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 28px;
 }
 
 input {
