@@ -12,7 +12,102 @@
     <h1>Admin</h1>
 
     <div class="addProduct">
-      <div class="productBox">
+      <table>
+        <tr>
+          <th>Nombre</th>
+          <th>Productor</th>
+          <th>Cantidad</th>
+          <th>Costo May.</th>
+          <th>Costo Min.</th>
+          <th>Unidad May.</th>
+          <th>Unidad Min.</th>
+        </tr>
+        <tr>
+          <td><input id="name" type="text" v-model="name" /></td>
+          <td><input id="nameP" type="text" v-model="productor" /></td>
+          <td><input class="number" type="text" v-model="cantidad" /></td>
+          <td><input class="number" type="text" v-model="priceCost" /></td>
+          <td><input class="number" type="text" v-model="priceMin" /></td>
+          <td>        
+            <select id="unidadM" v-model="unidadM">
+              <option disabled value>Unidad Mayorista</option>
+              <option value="Kg" >Kg</option>
+              <option value="Gr" >Gr</option>
+              <option value="Caja" >Caja</option>
+              <option value="Cajon" >Cajon</option>
+              <option value="Jaula" >Jaula</option>
+              <option value="Unidades" >Unidades</option>
+            </select>
+          </td>
+          <td>
+            <select id="unidadMin" v-model="unidadMin">
+              <option disabled value>Unidad Minorista</option>
+              <option value="Kg">Kg</option>
+              <option value="Gr">Gr</option>
+              <option value="Caja">Caja</option>
+              <option value="Cc">Cc</option>
+              <option value="Lt">Lt</option>
+              <option value="Unidad">Unidad</option>
+
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <th>Categoria</th>
+          <th>Subcategoria</th>
+          <th>Vistas</th>
+          <th>Imagen</th>
+          <th>Stock </th>
+          <th>Activo</th>
+          <th>Confirmar</th>
+        </tr>
+        <tr>
+          <td>
+            <select id="category" v-model="type">
+              <option disabled value>Categoria</option>
+              <option value="verdura" >Verdura</option>
+              <option value="fruta" >Fruta</option>
+              <option value="almacen" >Almacen</option>
+              <option value="vinos" >Vinos</option>
+              <option value="medicina" >Medicina</option>
+              <option value="comida" >Comida</option>
+            </select>
+          </td>
+          <td>
+            <select id="category">
+              <option disable value="">Seleccionar</option>
+              <option value="">Legumbres</option>
+              <option value="">Lacteos</option>
+              <option value="">Dulces</option>
+              <option value="">Panificados</option>
+              <option value="">Verdes</option>
+              <option value="">Citricos</option>
+            </select>
+          </td>
+          <td>
+           <select id="category">
+             <option disable value="Todas las paginas"> Seleccionar Pagina</option>
+             <option value="">Todas las paginas</option>
+             <option value="">Comunitaria</option>
+             <option value="">Mayorista</option>
+             <option value="">Vrde</option>
+           </select>
+          </td>
+          <td>
+            <button @click="$refs.imageSelect.click()">Subir Imagen</button>
+          </td>
+          <td>
+            <input id="stock" type="text" v-model="stock" />
+          </td>
+          <td>
+           <input id="active" type="checkbox" v-model="active" />
+          </td>
+          <td>
+            <button id="addProduct" class="greenBtn" @click="onUpload()">Add</button> 
+          </td>
+        </tr>
+      </table>
+      <!-- <div class="productBox">
         <label for="name">Nombre</label>
         <input id="name" type="text" v-model="name" />
       </div>
@@ -87,7 +182,7 @@
         <input id="active" type="checkbox" v-model="active" />
       </div>
 
-      <button id="addProduct" class="greenBtn" @click="onUpload()">Add</button>
+      <button id="addProduct" class="greenBtn" @click="onUpload()">Add</button> -->
 
     </div> 
 
@@ -390,6 +485,10 @@ input#stock {
   padding: 5px;
   width: 40px;
 }
+input.number{
+  padding: 5px;
+  width: 40px;
+}
 select {
   height: 29px;
   padding: 0px 10px;
@@ -475,6 +574,7 @@ select {
   padding: 20px 10px;
   border-left: 2px solid #a53179;
   flex-wrap: wrap  ;
+  min-width: 966px;
 }
 .addProduct .productBox {
   display: flex;

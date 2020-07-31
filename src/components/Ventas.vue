@@ -17,50 +17,45 @@
       <input type="text" v-model="search" placeholder="Buscar" />
       <button style="margin-bottom:20px;" @click="scrollBottom">Ver ultimo</button>
     </div>
+
     <div class="sale" v-for="sale in filterBy(sales, search)" v-bind:key="sale['.key']">
-      <div class="userData" @click="toggleCollapse($event)">
-    <div class="line status" >
-      <input type="radio" id="Pendiente" value="pendiente" v-model="sale[0].status" 
+     <div class="userData" @click="toggleCollapse($event)">
+      <div class="line status" >
+       <input type="radio" id="Pendiente" value="pendiente" v-model="sale[0].status" 
         @change="updateUserInfo($event, sale['.key'], '0/status')">
-      <label for="Pendiente">Pendiente</label>
-        <input type="radio" id="Entregado" value="entregado" v-model="sale[0].status" 
-          @change="updateUserInfo($event, sale['.key'], '0/status')">
-        <label for="Entregado">Entregado</label>
-        </div>
-
-        <div class="line date">
-          <div class="lineTitle">Fecha</div>
-          <input
-            type="text"
-            v-model="sale[0].date"
-            @change="updateUserInfo($event, sale['.key'], '0/date')"
-          />
-        </div>
-        <div class="line name">
-          <div class="lineTitle">Nombre</div>
-          <input
-            type="text"
-            v-model="sale[0].name"
-            @change="updateUserInfo($event, sale['.key'], '0/name')"
-          />
-        </div>
-
-        <div class="line address">
-          <div class="lineTitle">Direccion</div>
-          <input
-            type="text"
-            v-model="sale[0].address"
-            @change="updateUserInfo($event, sale['.key'], '0/address')"
-          />
-        </div>
+       <label for="Pendiente">Pendiente</label>
+       <input type="radio" id="Entregado" value="entregado" v-model="sale[0].status" 
+        @change="updateUserInfo($event, sale['.key'], '0/status')">
+       <label for="Entregado">Entregado</label>
+      </div>
+      <div class="line date">
+        <div class="lineTitle">Fecha</div>
+        <input
+          type="text"
+          v-model="sale[0].date"
+          @change="updateUserInfo($event, sale['.key'], '0/date')"/>
+      </div>
+      <div class="line name">
+        <div class="lineTitle">Nombre</div>
+        <input
+          type="text"
+          v-model="sale[0].name"
+          @change="updateUserInfo($event, sale['.key'], '0/name')"/>
+      </div>
+      <div class="line address">
+        <div class="lineTitle">Direccion</div>
+        <input
+          type="text"
+          v-model="sale[0].address"
+          @change="updateUserInfo($event, sale['.key'], '0/address')"/>
+      </div>
 
         <div class="line localidad">
           <div class="lineTitle">Localidad</div>
           <input
             type="text"
             v-model="sale[0].localidad"
-            @change="updateUserInfo($event, sale['.key'], '0/localidad')"
-          />
+            @change="updateUserInfo($event, sale['.key'], '0/localidad')"/>
         </div>
 
         <div class="line phone">
@@ -68,8 +63,7 @@
           <input
             type="text"
             v-model="sale[0].phone"
-            @change="updateUserInfo($event, sale['.key'], '0/phone')"
-          />
+            @change="updateUserInfo($event, sale['.key'], '0/phone')"/>
         </div>
 
         <div class="line email">
@@ -77,32 +71,21 @@
           <input
             type="text"
             v-model="sale[0].email"
-            @change="updateUserInfo($event, sale['.key'], '0/email')"
-          />
+            @change="updateUserInfo($event, sale['.key'], '0/email')"/>
         </div>
         <div class="line total">
           <div class="lineTitle">Total</div>
           <input
             type="text"
             v-model="sale[0].total"
-            @change="updateUserInfo($event, sale['.key'], '0/total')"
-          />
+            @change="updateUserInfo($event, sale['.key'], '0/total')"/>
         </div>
-        <!-- <div class="line total">
-          <div class="lineTitle">Total Cantidad</div>
-          <input
-            type="text"
-            v-model="sale[0].totalAmount"
-            @change="updateUserInfo($event, sale['.key'], '0/totalAmount')"
-          />
-        </div> -->
         <div class="line pago">
           <div class="lineTitle">Pago</div>
           <input
             type="text"
             v-model="sale[0].pago"
-            @change="updateUserInfo($event, sale['.key'], '0/pago')"
-          />
+            @change="updateUserInfo($event, sale['.key'], '0/pago')"/>
         </div>
         <div class="line preference">
           <div class="lineTitle">Pref</div>
@@ -110,8 +93,8 @@
             name
             id
             v-model="sale[0].preference"
-            @change="updateUserInfo($event, sale['.key'], '0/preference')"
-          ></textarea>
+            @change="updateUserInfo($event, sale['.key'], '0/preference')">
+          </textarea>
         </div>
       
               <!-- <tr v-for="(item, index) in sale [0].items" v-bind:key="index">
