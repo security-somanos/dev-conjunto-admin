@@ -17,7 +17,7 @@
           <th>Productor</th>
           <th>Imagen</th>
           <th>Costo May.</th>
-          <th>Costo Min.</th>
+          <th>Venta Min.</th>
           <th>Unidad May.</th>
           <th>Activo</th>
         </tr>
@@ -25,6 +25,13 @@
           <td><input id="name" type="text" v-model="name" /></td>
           <td><input id="nameP" type="text" v-model="productor" /></td>          
           <td>
+                    <input
+          id="image"
+          style="display:none"
+          type="file"
+          ref="imageSelect"
+          @change="onFileSelected($event)"
+        />
             <button @click="$refs.imageSelect.click()">Subir Imagen</button>
           </td>
           <td><input class="number" type="text" v-model="priceCosto" /></td>
@@ -111,7 +118,7 @@
           <th>Venta Mayorista
           </th>
         </tr>
-        <tr><td><input class="number" type="text" v-model="priceMin" /></td></tr>
+        <tr><td><input class="number" type="text" v-model="priceMay" /></td></tr>
       </table>
     </div> 
 
@@ -270,22 +277,26 @@ export default {
         type: this.type,
         subtype: this.subtype,
         productor: this.productor,
-        price: this.price,
+        price: this.priceMay,
         priceCosto: this.priceCosto,
         priceMin: this.priceMin,
+        priceMay: this.priceMay,
         stock: this.stock,
         active: this.active,
         amount: 0
       });
       this.name = "";
       this.view = "";
-      this.cantidad= "";
-      this.unidadM= "";
+      this.cantidad = "";
+      this.unidadM = "";
+      this.unidadMin = "";
       this.image = "";
       this.type = "";
       this.subtype = "";
       this.price = "";
-      this.priceCost = "";
+      this.priceCosto = "";
+      this.priceMin = "";
+      this.priceMay = "";
       this.productor = "";
       this.stock = 0;
       this.active = false;
