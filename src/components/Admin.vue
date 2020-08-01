@@ -11,21 +11,23 @@
     </div>
     <h1>Admin</h1>
     <div class="addProduct">
-      <table>
+      <table >
         <tr>
           <th>Nombre</th>
           <th>Productor</th>
-          <th>Cantidad</th>
+          <th>Imagen</th>
           <th>Costo May.</th>
           <th>Costo Min.</th>
           <th>Unidad May.</th>
-          <th>Unidad Min.</th>
+          <th>Activo</th>
         </tr>
         <tr>
           <td><input id="name" type="text" v-model="name" /></td>
-          <td><input id="nameP" type="text" v-model="productor" /></td>
-          <td><input class="number" type="text" v-model="cantidad" /></td>
-          <td><input class="number" type="text" v-model="priceCost" /></td>
+          <td><input id="nameP" type="text" v-model="productor" /></td>          
+          <td>
+            <button @click="$refs.imageSelect.click()">Subir Imagen</button>
+          </td>
+          <td><input class="number" type="text" v-model="priceCosto" /></td>
           <td><input class="number" type="text" v-model="priceMin" /></td>
           <td>        
             <select id="unidadM" v-model="unidadM">
@@ -39,25 +41,16 @@
             </select>
           </td>
           <td>
-            <select id="unidadMin" v-model="unidadMin">
-              <option disabled value>Unidad Minorista</option>
-              <option value="Kg">Kg</option>
-              <option value="Gr">Gr</option>
-              <option value="Caja">Caja</option>
-              <option value="Cc">Cc</option>
-              <option value="Lt">Lt</option>
-              <option value="Unidad">Unidad</option>
-
-            </select>
-          </td>
+           <input id="active" type="checkbox" v-model="active" />
+          </td>          
         </tr>
         <tr>
           <th>Categoria</th>
           <th>Subcategoria</th>
           <th>Vistas</th>
-          <th>Imagen</th>
+          <th>Cant. May.</th>
           <th>Stock </th>
-          <th>Activo</th>
+          <th>Unidad Min.</th>
           <th>Confirmar</th>
         </tr>
         <tr>
@@ -73,7 +66,7 @@
             </select>
           </td>
           <td>
-            <select id="subcategory">
+            <select id="subcategory" v-model="subtype">
               <option disable value="">Seleccionar</option>
               <option value="Legumbres">Legumbres</option>
               <option value="Lácteos">Lacteos</option>
@@ -84,7 +77,7 @@
             </select>
           </td>
           <td>
-           <select id="category">
+           <select id="category" v-model="view">
              <option disable value="Todas las paginas"> Seleccionar Pagina</option>
              <option value="Todas">Todas las paginas</option>
              <option value="Comunitaria">Comunitaria</option>
@@ -93,18 +86,32 @@
            </select>
           </td>
           <td>
-            <button @click="$refs.imageSelect.click()">Subir Imagen</button>
-          </td>
+            <input class="number" type="text" v-model="cantidad" />
+          </td>          
           <td>
             <input id="stock" type="text" v-model="stock" />
           </td>
+
           <td>
-           <input id="active" type="checkbox" v-model="active" />
+            <select id="unidadMin" v-model="unidadMin">
+              <option disabled value>Unidad Minorista</option>
+              <option value="Kg">Kg</option>
+              <option value="Gr">Gr</option>
+              <option value="Caja">Caja</option>
+              <option value="Cc">Cc</option>
+              <option value="Lt">Lt</option>
+              <option value="Unidad">Unidad</option>
+            </select>
           </td>
           <td>
             <button id="addProduct" class="greenBtn" @click="onUpload()">Add</button> 
           </td>
         </tr>
+        <tr>
+          <th>Venta Mayorista
+          </th>
+        </tr>
+        <tr><td><input class="number" type="text" v-model="priceMin" /></td></tr>
       </table>
     </div> 
 
@@ -130,7 +137,7 @@
         </div>
       </div>
     </div>
-    <table class="staticProd">
+    <table class="staticProd" >
       <tr>
         <th>Foto</th>
         <th>Nombre</th>
@@ -145,7 +152,7 @@
         <th>Editar</th>
       </tr>
       <tr v-for="product in orderBy(filteredProducts, prodType, prodTypeReverse)"
-          v-bind:key="product['.key']" v-bind:class="{ active: product.active, hidden: !toggleHide }">
+          v-bind:key="product['.key']" v-bind:class="{ active: product.active, hidden: !toggleHide }" >
         <td>
           <img class="productImage" :src="product.image" alt />
         </td>
@@ -157,7 +164,7 @@
         <td>{{product.subtype}}</td>
         <td>${{product.price}}</td>
         <td>${{product.priceMin}}Falta Cargar</td>
-        <td>${{product.priceCost}}</td>
+        <td>${{product.priceCosto}}</td>
         <td>
           <button class="roundBtn" @click="setEditName(product.name, product['.key'])">
             Edit
@@ -166,18 +173,10 @@
       </tr>
     </table>
 
-        <!-- <div class="static" v-if="!product.edit">
+   <!-- <div class="static" v-if="!product.edit">
         </div>
-
         <div class="edit" v-else>
-          <div class="element">
-            <label for="name">Name</label>
-            <input id="name" type="text" v-model="product.name" />
-          </div>
-          <div class="element">
-            <label for="nameP">Productor</label>
-            <input id="nameP" type="text" v-model="product.productor" />
-          </div>
+
           <div class="element">
             <label for="cantidad">Cantidad Mayorista</label>
             <input id="cantidad" type="text" v-model="product.cantidad" />
@@ -186,63 +185,6 @@
             <label for="image">Image Url</label>
             <input id="image" type="text" v-model="product.image" />
           </div>
-          <div class="element">
-            <label for="category">Categoria</label>
-            <select v-model="product.type">
-              <option disabled value>Categoria</option>
-              <option>verdura</option>
-              <option>fruta</option>
-              <option>almacen</option>
-              <option>vinos</option>
-              <option>medicina</option>
-              <option>comida</option>
-            </select>
-          </div>          
-          <div class="element">
-            <label for="category">Uni/Mayorista</label>
-            <select v-model="product.unidadM">
-              <option disabled value>Unidades</option>
-              <option>Kg</option>
-              <option>Gr</option>
-              <option>Caja</option>
-              <option>Cajon</option>
-              <option>Jaula</option>
-              <option>Unidades</option>
-            </select>
-          </div>      
-          <div class="element">
-            <label for="category">Uni/Minorista</label>
-            <select v-model="product.unidadMin">
-              <option disabled value>Unidades</option>
-              <option>Kg</option>
-              <option>Gr</option>
-              <option>Caja</option>
-              <option>Cc</option>
-              <option>Lt</option>
-              <option>Unidad</option>
-            </select>
-          </div>
-          <div class="element">
-            <label for="price">Precio Mayorista</label>
-            <input id="price" type="text" v-model="product.price" />
-          </div>
-          <div class="element">
-            <label for="priceM">Precio Minorista</label>
-            <input id="priceM" type="text" v-model="product.priceMin" />
-          </div>
-          <div class="element">
-            <label for="priceP">Precio Costo</label>
-            <input id="priceP" type="text" v-model="product.priceCost" />
-          </div>
-          <div class="element">
-            <label for="stock">Stock</label>
-            <input id="stock" type="text" v-model="product.stock" />
-          </div>
-          <div class="element">
-            <label for="active">Active</label>
-            <input id="active" type="checkbox" v-model="product.active" />
-          </div>
-          <button class="greenBtn" @click="saveEdit(product)">Save</button>
           <div>
             <vue-confirmation-button
               class="rdBtn"
@@ -266,6 +208,7 @@ export default {
     return {
       search: "",
       name: "",
+      view: "",
       unidadM: "",
       unidadMin: "",
       productor: "",
@@ -275,7 +218,7 @@ export default {
       type: "",
       subtype: "",
       price: 0,
-      priceCost: 0,
+      priceCosto: 0,
       priceMin: 0,
       stock: 0,
       active: true,
@@ -323,17 +266,19 @@ export default {
         unidadMin: this.unidadMin,
         edit: false,
         image: this.image,
+        view: this.view,
         type: this.type,
         subtype: this.subtype,
         productor: this.productor,
         price: this.price,
-        priceCost: this.priceCost,
+        priceCosto: this.priceCosto,
         priceMin: this.priceMin,
         stock: this.stock,
         active: this.active,
         amount: 0
       });
       this.name = "";
+      this.view = "";
       this.cantidad= "";
       this.unidadM= "";
       this.image = "";
@@ -374,13 +319,14 @@ export default {
         name: product.name,
         cantidad: product.cantidad,
         edit: false,
+        view: product.view,
         unidadM: product.unidadM,
         unidadMin: product.unidadMin,
         image: product.image,
         type: product.type,
         subtype: product.subtype,
         price: product.price,
-        priceCost: product.priceCost,
+        priceCosto: product.priceCosto,
         stock: product.stock,
         productor: product.productor,
         active: product.active,
