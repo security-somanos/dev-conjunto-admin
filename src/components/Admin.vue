@@ -1,16 +1,15 @@
 <template>
-  
   <div id="admin">
-   <vue-headful title="Mayorista - Productos" description="Administrar productos"/>
-    <img style="height:100px;width:100px;margin:20px auto;" src="https://storage.cloud.google.com/el-conjunto.appspot.com/icons/logoconjuro.png" alt="">
+    <vue-headful title="Mayorista - Productos" description="Administrar productos"/>
+    <img style="height:100px;width:100px;margin:20px auto;" 
+     src="https://storage.cloud.google.com/el-conjunto.appspot.com/icons/logoconjuro.png" alt="">
     <div id="nav">
-      <router-link to="/admin">Productos</router-link>
-      <router-link to="/ventas">Pedidos</router-link>
-      <router-link to="/totals">Totales</router-link>
-      <router-link to="/login" id="logout" v-on:click.native="logout()" replace>Logout</router-link>
+     <router-link to="/admin">Productos</router-link>
+     <router-link to="/ventas">Pedidos</router-link>
+     <router-link to="/totals">Totales</router-link>
+     <router-link to="/login" id="logout" v-on:click.native="logout()" replace>Logout</router-link>
     </div>
     <h1>Admin</h1>
-
     <div class="addProduct">
       <table>
         <tr>
@@ -74,23 +73,23 @@
             </select>
           </td>
           <td>
-            <select id="category">
+            <select id="subcategory">
               <option disable value="">Seleccionar</option>
-              <option value="">Legumbres</option>
-              <option value="">Lacteos</option>
-              <option value="">Dulces</option>
-              <option value="">Panificados</option>
-              <option value="">Verdes</option>
-              <option value="">Citricos</option>
+              <option value="Legumbres">Legumbres</option>
+              <option value="Lácteos">Lacteos</option>
+              <option value="Dulces">Dulces</option>
+              <option value="Panificados">Panificados</option>
+              <option value="Verdes">Verdes</option>
+              <option value="Cítricos">Citricos</option>
             </select>
           </td>
           <td>
            <select id="category">
              <option disable value="Todas las paginas"> Seleccionar Pagina</option>
-             <option value="">Todas las paginas</option>
-             <option value="">Comunitaria</option>
-             <option value="">Mayorista</option>
-             <option value="">Vrde</option>
+             <option value="Todas">Todas las paginas</option>
+             <option value="Comunitaria">Comunitaria</option>
+             <option value="Mayorista">Mayorista</option>
+             <option value="Vrde">Vrde</option>
            </select>
           </td>
           <td>
@@ -107,83 +106,6 @@
           </td>
         </tr>
       </table>
-      <!-- <div class="productBox">
-        <label for="name">Nombre</label>
-        <input id="name" type="text" v-model="name" />
-      </div>
-
-      <div class="productBox">
-        <label for="cantidad">Cantidad Mayorista</label>
-        <input id="cantidad" type="text" v-model="cantidad" />
-      </div>
-
-      <div class="productBox">
-        <label for="nameP">Productor</label>
-        <input id="nameP" type="text" v-model="productor" />
-      </div>
-      
-      <div class="productBox">
-        <input
-          id="image"
-          style="display:none"
-          type="file"
-          ref="imageSelect"
-          @change="onFileSelected($event)"
-        />
-        <button @click="$refs.imageSelect.click()">Subir Imagen</button>
-      </div>
-
-      <div class="productBox">
-        <select id="category" v-model="type">
-          <option disabled value>Categoria</option>
-          <option value="verdura" >Verdura</option>
-          <option value="fruta" >Fruta</option>
-          <option value="almacen" >Almacen</option>
-          <option value="vinos" >Vinos</option>
-          <option value="medicina" >Medicina</option>
-          <option value="comida" >Comida</option>
-        </select>
-      </div>
-
-      <div class="productBox">
-        <select id="unidadM" v-model="unidadM">
-          <option disabled value>Unidad Mayorista</option>
-          <option value="Kg" >Kg</option>
-          <option value="Gr" >Gr</option>
-          <option value="Caja" >Caja</option>
-          <option value="Cajon" >Cajon</option>
-          <option value="Jaula" >Jaula</option>
-          <option value="Unidades" >Unidades</option>
-        </select>
-      </div>
-
-      <div class="productBox">
-        <label for="price">Precio Mayorista</label>
-        <input id="price" type="text" v-model="price" />
-      </div>
-
-      <div class="productBox">
-        <label for="price">Precio Costo</label>
-        <input id="priceC" type="text" v-model="priceCost" />
-      </div>
-
-      <div class="productBox">
-        <label for="priceMin">Precio Costo</label>
-        <input id="priceMin" type="text" v-model="priceMin" />
-      </div>
-      
-      <div class="productBox">
-        <label for="stock">Stock</label>
-        <input id="stock" type="text" v-model="stock" />
-      </div>
-
-      <div class="productBox">
-        <label for="active">Active</label>
-        <input id="active" type="checkbox" v-model="active" />
-      </div>
-
-      <button id="addProduct" class="greenBtn" @click="onUpload()">Add</button> -->
-
     </div> 
 
     <div class="search">
@@ -197,39 +119,56 @@
           <option value="type">Categoria</option>
           <option value="active">Active</option>
         </select>
-
         <input type="Search" v-model="search" placeholder="buscar" />
       </div>
       <div class="hideActive">
         <div class="hideActive">
           <label for="toggleHide">
-            <strong>Mostrar desactivados</strong>
+          <strong>Mostrar desactivados</strong>
           </label>
           <input id="toggleHide" type="checkbox" v-model="toggleHide" />
         </div>
       </div>
     </div>
-    <div class="itemBin">
-      <div
-        class="item"
-        v-for="product in orderBy(filteredProducts, prodType, prodTypeReverse)"
-        v-bind:key="product['.key']"
-        v-bind:class="{ active: product.active, hidden: !toggleHide }"
-      >
-        <div class="static" v-if="!product.edit">
+    <table class="staticProd">
+      <tr>
+        <th>Foto</th>
+        <th>Nombre</th>
+        <th>Stock</th>
+        <th>Proveedor</th>
+        <th>Cantidad May.</th>
+        <th>Categoria</th>
+        <th>Subcategoria</th>
+        <th>Precio May.</th>
+        <th>Precio Min.</th>
+        <th>Costo</th>
+        <th>Editar</th>
+      </tr>
+      <tr v-for="product in orderBy(filteredProducts, prodType, prodTypeReverse)"
+          v-bind:key="product['.key']" v-bind:class="{ active: product.active, hidden: !toggleHide }">
+        <td>
           <img class="productImage" :src="product.image" alt />
-          <div class="box product">{{product.name}}</div>
-          <div class="box product">{{product.productor}}</div>
-          <div class="box product">{{product.cantidad}}</div>
-          <div class="box category">Cat: {{product.type}}</div>
-          <div class="box category">Medida Mayorista: {{product.unidadM}}</div>
-          <div class="box category">Medida Minorista: {{product.unidadMin}}</div>
-          <div class="box price">Precio Mayorista: ${{product.price}}</div>
-          <div class="box price">Precio Minorista: ${{product.priceMin}}</div>
-          <div class="box price">Precio Costo: ${{product.priceCost}}</div>
-          <div class="box stock">Stock: {{product.stock}}</div>
-          <button class="greenBtn" @click="setEditName(product.name, product['.key'])">Edit</button>
+        </td>
+        <td>{{product.name}}</td>
+        <td>{{product.stock}}</td>
+        <td>{{product.productor}}</td>
+        <td>{{product.cantidad}}{{product.unidadM}}</td>
+        <td>{{product.type}}</td>
+        <td>{{product.subtype}}</td>
+        <td>${{product.price}}</td>
+        <td>${{product.priceMin}}Falta Cargar</td>
+        <td>${{product.priceCost}}</td>
+        <td>
+          <button class="roundBtn" @click="setEditName(product.name, product['.key'])">
+            Edit
+          </button>
+        </td>
+      </tr>
+    </table>
+
+        <!-- <div class="static" v-if="!product.edit">
         </div>
+
         <div class="edit" v-else>
           <div class="element">
             <label for="name">Name</label>
@@ -291,7 +230,7 @@
             <label for="priceM">Precio Minorista</label>
             <input id="priceM" type="text" v-model="product.priceMin" />
           </div>
-         <div class="element">
+          <div class="element">
             <label for="priceP">Precio Costo</label>
             <input id="priceP" type="text" v-model="product.priceCost" />
           </div>
@@ -308,16 +247,14 @@
             <vue-confirmation-button
               class="rdBtn"
               :messages="customMessages"
-              v-on:confirmation-success="removeProductName(product['.key'])"
-            ></vue-confirmation-button>
+              v-on:confirmation-success="removeProductName(product['.key'])">
+            </vue-confirmation-button>
           </div>
-        </div>
-      </div>
-    </div>
+        </div> -->
   </div>
 </template>
 
-<script>
+<script >
 import { db } from "../firebase";
 import Vue2Filters from "vue2-filters";
 import axios from "axios";
@@ -336,6 +273,7 @@ export default {
       edit: false,
       image: "",
       type: "",
+      subtype: "",
       price: 0,
       priceCost: 0,
       priceMin: 0,
@@ -386,6 +324,7 @@ export default {
         edit: false,
         image: this.image,
         type: this.type,
+        subtype: this.subtype,
         productor: this.productor,
         price: this.price,
         priceCost: this.priceCost,
@@ -399,6 +338,7 @@ export default {
       this.unidadM= "";
       this.image = "";
       this.type = "";
+      this.subtype = "";
       this.price = "";
       this.priceCost = "";
       this.productor = "";
@@ -438,6 +378,7 @@ export default {
         unidadMin: product.unidadMin,
         image: product.image,
         type: product.type,
+        subtype: product.subtype,
         price: product.price,
         priceCost: product.priceCost,
         stock: product.stock,
@@ -477,6 +418,14 @@ export default {
 #logout {
   background-color: #cc3838;
 }
+th, td {
+    padding: 2px;
+  }
+.staticProd tr:nth-child(even),
+.editProd tr:nth-child(even) {
+  background-color: #e4e4e4cf;
+  }
+
 input {
   padding: 5px;
 }
@@ -560,9 +509,6 @@ select {
 
 .productImage {
   height: 50px;
-  width: 60px;
-  position: relative;
-  right: 26px;
 }
 .addProduct {
   display: flex;
@@ -657,13 +603,15 @@ select {
 }
 
 .greenBtn {
-  height: 30px;
-  width: 80px;
+  height: 34px;
+  width: 66px;
   background-color: #a53179;
   border: none;
   color: white;
   position: relative;
   left: 2px;
+  border: none;
+  border-radius: 21px;
 }
 .redBtn {
   height: 30px;
@@ -931,15 +879,8 @@ select {
     margin-bottom: 5px;
   }
 
-  .greenBtn {
-    height: 30px;
-    width: 60px;
-    margin: 0 20px;
+  .roundBtn {
     background-color: #a53179;
-    border: none;
-    color: white;
-    position: relative;
-    right: 5px;
   }
   .redBtn {
     height: 30px;
@@ -960,6 +901,7 @@ select {
     padding: 20px 10px;
     border-left: 2px solid #a53179;
   }
+
 }
 </style>
 

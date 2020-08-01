@@ -98,4 +98,16 @@ a {
   font-size: 14px;
   border-radius: 8px;
 }
+  .roundBtn {
+  height: 34px;
+  width: 66px;
+  background-color: #a53179;
+  border: none;
+  color: white;
+  position: relative;
+  left: 2px;
+  border: none;
+  border-radius: 21px;
+  }
+
 </style>
