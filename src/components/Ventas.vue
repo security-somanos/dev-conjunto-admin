@@ -13,8 +13,9 @@
       <router-link to="/login" id="logout" v-on:click.native="logout()" replace>Logout</router-link>
     </div>
     <h1>Total Ventas : ${{salesTotalCount}}</h1>
+    <h4>Total Costo Ventas: Faltan costo en productos, <br>(por ahora ingresar manual en los pedidos)</h4>
     <div class="search">
-      <input type="text" v-model="search" placeholder="Buscar" />
+      <input type="text" v-model="search" placeholder="Buscar"  /> 
       <button style="margin-bottom:20px;" @click="scrollBottom">Ver ultimo</button>
     </div>
 
@@ -111,6 +112,7 @@
            <th>Cantidad</th>
            <th>Pago</th>
            <th colspan="2">Precio May.</th>
+           <th>Costo</th>
           </tr>
           <tr v-for="(item, index) in sale [0].items" v-bind:key="index" >
             <td>
@@ -141,6 +143,15 @@
                 id="price"
                 v-model="item.precio"
                 @change="updateItems($event, sale['.key'], index, 'precio', item, sale[0])"/>
+              </div>
+            </td>           
+            <td>
+              <div class="row price">
+                <input
+                type="text"
+                class="numb"
+                v-model="item.precioCosto"
+                @change="updateItems($event, sale['.key'], index, 'precioCosto', item, sale[0])"/>
               </div>
             </td>           
           </tr>
@@ -347,10 +358,11 @@ table{
 }
 .sale {
   margin-bottom: 30px;
-  box-shadow: 0 6px 23px rgba(0, 0, 0, 0.16);
+  box-shadow: 0 6px 23px rgba(0, 0, 0, 0.9);
   position: relative;
   border-left: 2px solid #a53179;
   width: 470px;
+  border-radius: 20px
 }
 .search {
   margin-bottom: 40px;
@@ -487,11 +499,15 @@ table{
   width: 200px;
 }
 input#numb{
-  color:green;
+  color:black;
+  max-width: 38px;
+}
+input.numb{
+  color:black;
   max-width: 38px;
 }
 input#price{
-  color:green;
+  color:black;
   max-width: 38px;
 }
 input#amount{

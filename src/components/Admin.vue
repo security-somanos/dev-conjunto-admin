@@ -22,22 +22,25 @@
           <th>Activo</th>
         </tr>
         <tr>
-          <td><input id="name" type="text" v-model="name" /></td>
-          <td><input id="nameP" type="text" v-model="productor" /></td>          
           <td>
-                    <input
-          id="image"
-          style="display:none"
-          type="file"
-          ref="imageSelect"
-          @change="onFileSelected($event)"
-        />
+            <input id="name" type="text" v-model="name"/>
+          </td>
+          <td>
+            <input id="nameP" type="text" v-model="productor"/>
+          </td>          
+          <td>
+            <input id="image" style="display:none" type="file"
+              ref="imageSelect" @change="onFileSelected($event)"/>
             <button @click="$refs.imageSelect.click()">Subir Imagen</button>
           </td>
-          <td><input class="number" type="text" v-model="priceCosto" /></td>
-          <td><input class="number" type="text" v-model="priceMin" /></td>
+          <td>
+            <input class="number" type="text" v-model="priceCosto"/>
+          </td>
+          <td>
+            <input class="number" type="text" v-model="priceMin"/>
+          </td>
           <td>        
-            <select id="unidadM" v-model="unidadM">
+            <select class="unidad" v-model="unidadM">
               <option disabled value>Unidad Mayorista</option>
               <option value="Kg" >Kg</option>
               <option value="Gr" >Gr</option>
@@ -48,7 +51,7 @@
             </select>
           </td>
           <td>
-           <input id="active" type="checkbox" v-model="active" />
+           <input id="active" type="checkbox" v-model="active"/>
           </td>          
         </tr>
         <tr>
@@ -93,14 +96,13 @@
            </select>
           </td>
           <td>
-            <input class="number" type="text" v-model="cantidad" />
+            <input class="number" type="text" v-model="cantidad"/>
           </td>          
           <td>
-            <input id="stock" type="text" v-model="stock" />
+            <input id="stock" type="text" v-model="stock"/>
           </td>
-
           <td>
-            <select id="unidadMin" v-model="unidadMin">
+            <select class="unidad" v-model="unidadMin">
               <option disabled value>Unidad Minorista</option>
               <option value="Kg">Kg</option>
               <option value="Gr">Gr</option>
@@ -134,6 +136,7 @@
           <option value="active">Active</option>
         </select>
         <input type="Search" v-model="search" placeholder="buscar" />
+        <h4> >> Agregar Costo productos al nuevo campo.</h4>
       </div>
       <div class="hideActive">
         <div class="hideActive">
@@ -153,53 +156,148 @@
         <th>Cantidad May.</th>
         <th>Categoria</th>
         <th>Subcategoria</th>
-        <th>Precio May.</th>
-        <th>Precio Min.</th>
+        <th>Venta May.</th>
+        <th>Venta Min.</th>
         <th>Costo</th>
         <th>Editar</th>
       </tr>
       <tr v-for="product in orderBy(filteredProducts, prodType, prodTypeReverse)"
-          v-bind:key="product['.key']" v-bind:class="{ active: product.active, hidden: !toggleHide }" >
+          v-bind:key="product['.key']" 
+          v-bind:class="{ editing: productEditName == product.name, active: product.active, hidden: !toggleHide }">
         <td>
-          <img class="productImage" :src="product.image" alt />
+          <img class="productImage" :src="product.image" alt=''/>
         </td>
-        <td>{{product.name}}</td>
-        <td>{{product.stock}}</td>
-        <td>{{product.productor}}</td>
-        <td>{{product.cantidad}}{{product.unidadM}}</td>
-        <td>{{product.type}}</td>
-        <td>{{product.subtype}}</td>
-        <td>${{product.price}}</td>
-        <td>${{product.priceMin}}Falta Cargar</td>
-        <td>${{product.priceCosto}}</td>
         <td>
-          <button class="roundBtn" @click="setEditName(product.name, product['.key'])">
-            Edit
-          </button>
+          <div class="view">{{product.name}}</div>
+          <div class="edit">
+            <input id="name" type="text" v-model="product.name"/>
+          </div>
         </td>
+        <td>
+          <div class="view">
+            {{product.stock}}
+          </div>
+          <div class="edit">
+            Vistas
+           <select id="category" v-model="product.view">
+             <option disabled value> Seleccionar Pagina</option>
+             <option value="Todas">Todas las paginas</option>
+             <option value="Comunitaria">Comunitaria</option>
+             <option value="Mayorista">Mayorista</option>
+             <option value="Vrde">Vrde</option>
+           </select>
+              Stock
+            <input id="stock" type="text" v-model="product.stock"/>
+          </div>
+        </td>
+        <td>
+          <div class="view">
+            {{product.productor}}
+          </div>
+          <div class="edit">
+            <input id="nameP" type="text" v-model="product.productor"/>
+            <select class="unidad" v-model="product.unidadMin">
+              <option disabled value>Unidad Minorista</option>
+              <option value="Kg">Kg</option>
+              <option value="Gr">Gr</option>
+              <option value="Caja">Caja</option>
+              <option value="Cc">Cc</option>
+              <option value="Lt">Lt</option>
+              <option value="Unidad">Unidad</option>
+            </select>
+          </div>
+        </td>
+        <td>
+          <div class="view">
+            {{product.cantidad}}{{product.unidadM}}  
+          </div>
+          <div class="edit">
+            <input class="number" type="text" v-model="product.cantidad"/>         
+            <select class="unidad" v-model="product.unidadM">
+              <option disabled value>Unidad Mayorista</option>
+              <option value="Kg" >Kg</option>
+              <option value="Gr" >Gr</option>
+              <option value="Caja" >Caja</option>
+              <option value="Cajon" >Cajon</option>
+              <option value="Jaula" >Jaula</option>
+              <option value="Unidades" >Unidades</option>
+            </select>
+          </div>
+        </td>
+        <td>
+          <div class="view">
+            {{product.type}}
+          </div>
+          <div class="edit">
+            <select id="category" v-model="product.type">
+              <option disabled value>Categoria</option>
+              <option value="verdura" >Verdura</option>
+              <option value="fruta" >Fruta</option>
+              <option value="almacen" >Almacen</option>
+              <option value="vinos" >Vinos</option>
+              <option value="medicina" >Medicina</option>
+              <option value="comida" >Comida</option>
+            </select>
+          </div>
+        </td>
+        <td>
+          <div class="view">
+            {{product.subtype}}
+          </div>
+          <div class="edit">
+            <select id="subcategory" v-model="product.subtype">
+              <option disable value="">Seleccionar</option>
+              <option value="Legumbres">Legumbres</option>
+              <option value="Lácteos">Lacteos</option>
+              <option value="Dulces">Dulces</option>
+              <option value="Panificados">Panificados</option>
+              <option value="Verdes">Verdes</option>
+              <option value="Cítricos">Citricos</option>
+            </select>
+          </div>
+        </td>
+        <td>
+          <div class="view">
+            ${{product.price}}
+          </div>
+          <div class="edit">
+            <input class="number" type="text" v-model="product.price"/>
+            Este><input class="number" type="text" v-model="product.priceMay"/>
+          </div>
+        </td>
+        <td>
+          <div class="view">
+            ${{product.priceMin}}
+          </div>
+          <div class="edit">
+            <input class="number" type="text" v-model="product.priceMin"/>
+          </div>
+        </td>
+        <td>
+          <div class="view">
+            ${{product.priceCost}}
+            ${{product.priceCosto}}
+          </div>
+          <div class="edit">
+            <input class="number" type="text" v-model="product.priceCost"/>
+          </div>
+        </td>
+        <td>
+          <div class="view">
+          <button class="roundBtn" @click="setEditName(product.name, product['.key'])">Edit</button>
+          </div>
+          <div class="edit">
+          <button class="greenBtn" @click="saveEdit(product)">Save</button>
+          <vue-confirmation-button
+            class="rdBtn"
+            :messages="customMessages"
+            v-on:confirmation-success="removeProductName(product['.key'])"> 
+          </vue-confirmation-button>
+          </div>
+        </td>
+
       </tr>
     </table>
-
-   <!-- <div class="static" v-if="!product.edit">
-        </div>
-        <div class="edit" v-else>
-
-          <div class="element">
-            <label for="cantidad">Cantidad Mayorista</label>
-            <input id="cantidad" type="text" v-model="product.cantidad" />
-          </div>
-          <div class="element">
-            <label for="image">Image Url</label>
-            <input id="image" type="text" v-model="product.image" />
-          </div>
-          <div>
-            <vue-confirmation-button
-              class="rdBtn"
-              :messages="customMessages"
-              v-on:confirmation-success="removeProductName(product['.key'])">
-            </vue-confirmation-button>
-          </div>
-        </div> -->
   </div>
 </template>
 
@@ -227,6 +325,7 @@ export default {
       price: 0,
       priceCosto: 0,
       priceMin: 0,
+      priceMay: 0,
       stock: 0,
       active: true,
       customMessages: ["Borrar", "Estas seguro?","Exito"],
@@ -268,17 +367,22 @@ export default {
       productsRef.push({
         search: "",
         name: this.name,
+
         cantidad: this.cantidad,
         unidadM: this.unidadM,
         unidadMin: this.unidadMin,
+
         edit: false,
         image: this.image,
+
         view: this.view,
         type: this.type,
         subtype: this.subtype,
         productor: this.productor,
-        price: this.priceMay,
-        priceCosto: this.priceCosto,
+
+        price: this.price,
+        priceCost: this.priceCost,
+        priceCosto: this.priceCost,
         priceMin: this.priceMin,
         priceMay: this.priceMay,
         stock: this.stock,
@@ -294,6 +398,7 @@ export default {
       this.type = "";
       this.subtype = "";
       this.price = "";
+      this.priceCost = "";
       this.priceCosto = "";
       this.priceMin = "";
       this.priceMay = "";
@@ -337,12 +442,16 @@ export default {
         type: product.type,
         subtype: product.subtype,
         price: product.price,
-        priceCosto: product.priceCosto,
+        priceMin: product.priceMin,
+        priceMay: product.priceMay,
+        priceCost: product.priceCost,
+        priceCosto: product.priceCost,
         stock: product.stock,
         productor: product.productor,
         active: product.active,
         amount: 0
       });
+      this.productEditName = "";
     }
   },
   computed: {
@@ -357,6 +466,20 @@ export default {
 </script>
 
 <style scoped>
+
+[v-cloak] {
+      display: none;
+    }
+    .edit {
+      display: none;
+    }
+    .editing .edit {
+      display: block
+    }
+    .editing .view {
+      display: none;
+    }
+
 #app {
   font-family: sans-serif;
   font-size: 12px;
@@ -364,9 +487,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
   max-width: 1080px;
-  margin: 0 auto;
 }
 #nav {
   height: 30px;
@@ -375,9 +496,13 @@ export default {
 #logout {
   background-color: #cc3838;
 }
-th, td {
+th {
     padding: 2px;
   }
+td {
+  padding: 2px;
+  overflow: hidden;
+}
 .staticProd tr:nth-child(even),
 .editProd tr:nth-child(even) {
   background-color: #e4e4e4cf;
@@ -385,6 +510,7 @@ th, td {
 
 input {
   padding: 5px;
+  margin: 10px 5px 10px 5px;
 }
 input#price,input#priceC,input#cantidad,
 input#stock {
@@ -396,15 +522,20 @@ input.number{
   width: 40px;
 }
 select {
-  height: 29px;
+  height: 27px;
   padding: 0px 10px;
-  margin: 0 10px;
+  margin: 10px 5px 10px 5px;
 }
 .productBox button,
 .productBox select {
   height: 30px;
   position: relative;
   top: 10px;
+}
+select.unidad{
+ height: 25px;
+ padding: 0px;
+ width: 80px;
 }
 
 .reverse {
@@ -440,7 +571,7 @@ select {
 }
 
 #category {
-  margin-left: 20px;
+  color:black;
 }
 
 .search {
@@ -466,6 +597,7 @@ select {
 
 .productImage {
   height: 50px;
+  margin: 0px -20px 0px -20px;  
 }
 .addProduct {
   display: flex;
@@ -473,11 +605,12 @@ select {
   justify-content: space-around;
   background-color: #a531797a;
   margin-bottom: 20px;
-  box-shadow: 0 0px 4px rgba(0, 0, 0, 0.16);
+  box-shadow: 0 11px 22px rgb(0 0 23);
   padding: 20px 10px;
   border-left: 2px solid #a53179;
   flex-wrap: wrap  ;
   min-width: 966px;
+  border-radius: 18px;
 }
 .addProduct .productBox {
   display: flex;
@@ -538,14 +671,14 @@ select {
 .item .static .box.category {
   width: 120px;
 }
-.edit {
+/* .edit {
   display: flex;
   align-items: center;
   justify-content: space-around;
   padding: 10px;
   padding-left: 0px;
   flex-wrap: wrap;
-}
+} */
 .edit .element {
   display: flex;
   flex-direction: column;
@@ -646,7 +779,7 @@ select {
   }
   select {
     height: 29px;
-    padding: 0px 10px;
+    padding: 0px 0px 10px 2px;
   }
 
   .reverse {
