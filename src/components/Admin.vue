@@ -330,11 +330,8 @@ export default {
       productsRef.push({
         search: "",
         name: this.name,
-
         cantidad: this.cantidad,
         unidadM: this.unidadM,
-        unidadMin: this.unidadMin,
-
         edit: false,
         image: this.image,
         view: this.view,
@@ -342,7 +339,6 @@ export default {
         subtype: this.subtype,
         productor: this.productor,
         priceCosto: this.priceCosto,
-        priceMin: this.priceMin,
         priceMay: this.priceMay,
         stock: this.stock,
         active: this.active,
@@ -352,12 +348,10 @@ export default {
       this.view = "";
       this.cantidad = "";
       this.unidadM = "";
-      this.unidadMin = "";
       this.image = "";
       this.type = "";
       this.subtype = "";
       this.priceCosto = "";
-      this.priceMin = "";
       this.priceMay = "";
       this.productor = "";
       this.stock = 0;
@@ -394,11 +388,9 @@ export default {
         edit: false,
         view: product.view,
         unidadM: product.unidadM,
-        unidadMin: product.unidadMin,
         image: product.image,
         type: product.type,
         subtype: product.subtype,
-        priceMin: product.priceMin,
         priceMay: product.priceMay,
         priceCosto: product.priceCosto,
         stock: product.stock,
