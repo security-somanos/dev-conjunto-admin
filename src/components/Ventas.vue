@@ -15,17 +15,17 @@
     <h1>Total Ventas : ${{salesTotalCount}}</h1>
     <h4>Total Costo Ventas: Faltan costo en productos, <br>(por ahora ingresar manual en los pedidos)</h4>
     <div class="search">
-      <input type="text" v-model="search" placeholder="Buscar"  /> 
+      <input type="text" v-model="search" placeholder="Buscar"/>
       <button style="margin-bottom:20px;" @click="scrollBottom">Ver ultimo</button>
     </div>
 
     <div class="sale" v-for="sale in filterBy(sales, search)" v-bind:key="sale['.key']">
      <div class="userData" @click="toggleCollapse($event)">
       <div class="line status" >
-       <input type="radio" id="Pendiente" value="pendiente" v-model="sale[0].status" 
+       <input type="radio" id="Pendiente" value="pendiente" v-model="sale[0].status"
         @change="updateUserInfo($event, sale['.key'], '0/status')">
        <label for="Pendiente">Pendiente</label>
-       <input type="radio" id="Entregado" value="entregado" v-model="sale[0].status" 
+       <input type="radio" id="Entregado" value="entregado" v-model="sale[0].status"
         @change="updateUserInfo($event, sale['.key'], '0/status')">
        <label for="Entregado">Entregado</label>
       </div>
@@ -97,7 +97,7 @@
             @change="updateUserInfo($event, sale['.key'], '0/preference')">
           </textarea>
         </div>
-      
+
               <!-- <tr v-for="(item, index) in sale [0].items" v-bind:key="index">
                 <td > {{item.variedad}} </td>
                 <td contenteditable="true"> {{item.cantidad}}  </td>
@@ -127,7 +127,7 @@
                   @change="updateItems($event, sale['.key'], index, 'cantidad', item, sale[0])"/>
                </div>
             </td>
-            <td> 
+            <td>
              <div class="row payment">
                 <input
                 type="text"
@@ -141,10 +141,10 @@
                 <input
                 type="text"
                 id="price"
-                v-model="item.precio"
-                @change="updateItems($event, sale['.key'], index, 'precio', item, sale[0])"/>
+                v-model="item.precioMay"
+                @change="updateItems($event, sale['.key'], index, 'precioMay', item, sale[0])"/>
               </div>
-            </td>           
+            </td>
             <td>
               <div class="row price">
                 <input
@@ -153,7 +153,7 @@
                 v-model="item.precioCosto"
                 @change="updateItems($event, sale['.key'], index, 'precioCosto', item, sale[0])"/>
               </div>
-            </td>           
+            </td>
           </tr>
         </table>
       </div>
@@ -161,12 +161,12 @@
             class="rdBtn"
             ref="confirmationButton"
             :messages="customMessages"
-            v-on:confirmation-success="removeSale(sale['.key'])"> 
+            v-on:confirmation-success="removeSale(sale['.key'])">
             </vue-confirmation-button>
     </div>
     <button style="margin-bottom:40px;" @click="scrollTop">Volver</button>
           </div>
-           
+
   </div>
 </template>
 
@@ -219,7 +219,7 @@ export default {
       var p = "0/items/" + index + "/pago";
 
       if (name == "cantidad") {
-        item.pago = item.precio * item.cantidad;
+        item.pago = item.precioMay * item.cantidad;
       }
 
       var saleTotal = 0;
@@ -358,11 +358,12 @@ table{
 }
 .sale {
   margin-bottom: 30px;
-  box-shadow: 0 6px 23px rgba(0, 0, 0, 0.9);
+  box-shadow: 4px 1px 20px 5px #6f09cc73;
   position: relative;
   border-left: 2px solid #a53179;
   width: 470px;
-  border-radius: 20px
+  border-radius: 20px;
+  background-color: #b938a361;
 }
 .search {
   margin-bottom: 40px;
@@ -389,7 +390,7 @@ table{
 .sale .userData .line.status {
   color: black;
   margin-bottom: 10px;
-  
+
 }
 .line {
   padding: 4px;

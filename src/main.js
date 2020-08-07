@@ -22,25 +22,25 @@ Vue.use(rtdbPlugin)
 
 
 const routes = [
-  { 
-    path: '/admin', 
-    component: Admin 
-  },
-  { 
-    path: '/ventas', 
-    component: Ventas 
-  },
-  { 
-    path: '/totals', 
-    component: Totals 
-  },
-  { 
-    path: '/login', 
-    component: Login 
+  {
+    path: '/admin',
+    component: Admin
   },
   {
-    path: '/', 
-    component: Login 
+    path: '/ventas',
+    component: Ventas
+  },
+  {
+    path: '/totals',
+    component: Totals
+  },
+  {
+    path: '/login',
+    component: Login
+  },
+  {
+    path: '/',
+    component: Login
   },
 ]
 

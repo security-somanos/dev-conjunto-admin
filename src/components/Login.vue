@@ -3,10 +3,10 @@
     <vue-headful title="Mayorista - Ingreso" description="Ingreso"/>
     <img style="height:100px;margin:0 auto;margin-bottom:20px;" src="https://storage.cloud.google.com/el-conjunto.appspot.com/icons/logoconjuro.png" alt="">
     <h1>Admin Mayorista</h1>
-    <input type="text" name="username" v-model="input.username" placeholder="Username" />
-    <br />
-    <input type="password" name="password" v-model="input.password" placeholder="Password" />
-    <br />  
+    <input type="text" name="username" v-model="input.username" placeholder="Username"/>
+    <br/>
+    <input type="password" name="password" v-model="input.password" placeholder="Password"/>
+    <br/>
     <button type="button" v-on:click="login()">Login</button>
   </div>
 </template>

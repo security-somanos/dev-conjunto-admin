@@ -15,7 +15,7 @@ export default {
   components: {
     'Navigation': Navigation,
     'HomeNavigation': HomeNavigation
-  },  
+  },
   data() {
     return {
       authenticated: false,
@@ -58,7 +58,7 @@ body {
 #app {
   font-size: 14px;
   text-align: center;
-  color: #2c3e50;
+  color: rebeccapurple;
   margin-top: 60px;
   max-width: 1080px;
   margin: 0 auto;
