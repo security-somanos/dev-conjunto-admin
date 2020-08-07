@@ -142,7 +142,9 @@
         <th>Categoria</th>
         <th>Subcategoria</th>
         <th>Venta May.</th>
+        <th>Active</th>
         <th>Editar</th>
+        
       </tr>
       <tr v-for="product in orderBy(filteredProducts, prodType, prodTypeReverse)"
           v-bind:key="product['.key']"
@@ -244,6 +246,14 @@
           </div>
           <div class="edit">
             <input class="number" type="text" v-model="product.priceMay"/>
+          </div>
+        </td>
+        <td>
+          <div class="view">
+            <input id="active" type="checkbox" v-model="active" disabled/>
+          </div>
+          <div class="edit">
+            <input id="active" type="checkbox" v-model="active"/>
           </div>
         </td>
         <td>
