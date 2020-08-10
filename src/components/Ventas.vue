@@ -1,19 +1,20 @@
 <template>
   <div id="portal">
     <vue-headful title="Mayorista - Pedidos" description="Ver todos los pedidos"/>
-    <img
-      style="height:100px;width:100px;margin:0 auto;margin-bottom:20px;"
-      src="https://storage.cloud.google.com/el-conjunto.appspot.com/icons/logoconjuro.png"
-      alt
-    />
-    <div id="nav">
-      <router-link to="/admin">Productos</router-link>
-      <router-link to="/ventas">Pedidos</router-link>
-      <router-link to="/totals">Totales</router-link>
-      <router-link to="/login" id="logout" v-on:click.native="logout()" replace>Logout</router-link>
+    <div class="header">
+        <img class="logo"
+        src="https://storage.cloud.google.com/el-conjunto.appspot.com/icons/logoconjuro.png" alt=""/>
+      <div class="navButtons">
+        <router-link to="/admin">Productos</router-link>
+        <router-link to="/ventas">Pedidos</router-link>
+        <router-link to="/totals">Totales</router-link>
+        <router-link to="/login" id="logout" v-on:click.native="logout()" replace>Logout</router-link>
+      </div>
+      <div class="navText">
+      <p>Total Ventas : ${{salesTotalCount}}</p>
+      <p>Total Cantidades : {{totalAmount}}</p>
+      </div>    
     </div>
-    <h1>Total Ventas : ${{salesTotalCount}}</h1>
-    <h4>Total Costo Ventas: Faltan costo en productos, <br>(por ahora ingresar manual en los pedidos)</h4>
     <div class="search">
       <input type="text" v-model="search" placeholder="Buscar"/>
       <button style="margin-bottom:20px;" @click="scrollBottom">Ver ultimo</button>
@@ -75,11 +76,25 @@
             @change="updateUserInfo($event, sale['.key'], '0/email')"/>
         </div>
         <div class="line total">
-          <div class="lineTitle">Total</div>
+          <div class="lineTitle">Total Venta</div>
           <input
             type="text"
             v-model="sale[0].total"
             @change="updateUserInfo($event, sale['.key'], '0/total')"/>
+        </div>
+        <div class="line total">
+          <div class="lineTitle">Total Costo</div>
+          <input
+            type="text"
+            v-model="sale[0].totalCosto"
+            @change="updateUserInfo($event, sale['.key'], '0/totalCosto')"/>
+        </div>
+        <div class="line total">
+          <div class="lineTitle">Total Cantidad</div>
+          <input
+            type="text"
+            v-model="sale[0].cantidadTotal"
+            @change="updateUserInfo($event, sale['.key'], '0/cantidadTotal')"/>
         </div>
         <div class="line pago">
           <div class="lineTitle">Pago</div>
@@ -182,6 +197,7 @@ export default {
       sales: [],
       search: "",
       totalSales: 0,
+      totalAmount: 0,
       customMessages: ["Borrar", "Estas seguro?", "Exito"],
       pago: ""
     };
@@ -217,23 +233,28 @@ export default {
     updateItems(event, key, index, name, item, sale) {
       var n = "0/items/" + index + "/" + name;
       var p = "0/items/" + index + "/pago";
-
+      // var c = "0/items/" + index + "/" + cantidad;
+    
       if (name == "cantidad") {
         item.pago = item.precioMay * item.cantidad;
       }
 
       var saleTotal = 0;
-
       for (var i in sale.items) {
         saleTotal += parseInt(sale.items[i].pago);
       }
+      // var cantidadTotal = 0;
+      // for (var i in sale.items) {
+      //   cantidadTotal += parseInt(sale.items[i].cantidad)
+      // }
 
       let updateObject = {
         "0/total": saleTotal,
+        // "0/cantidadTotal": cantidadTotal,
+        [c]: item.cantidad,
         [p]: item.pago,
         [n]: event.target.value
       };
-
       salesRef.child(key).update(updateObject);
     },
     toggleCollapse(event) {
@@ -247,11 +268,14 @@ export default {
       var s = self.sales;
       var c = {};
       self.totalSales = 0;
+      self.totalAmount = 0;
       for (var i in s) {
+        // Create items local.
         var items = s[i][0].items;
         for (var o in items) {
           var name = items[o].variedad.toString();
           self.totalSales += parseInt(items[o].pago);
+          self.totalAmount += parseInt(items[o].cantidad)
           if (!c[name]) {
             c[name] = 0;
           }
@@ -271,22 +295,33 @@ export default {
       return this.totalSales;
     },
     // getTotal: function () {
-    //         var self = this;
-    //         var s = self.sales;
+    //         var s = this.sales;
     //         var c = {};
-    //         self.amountTotal = 0;
+    //         s.amountTotal = 0;
     //   for (var i in s) {
+    //     // Create items local.
     //     var items = s[i][0].items;
     //     for (var o in items) {
     //       var name = items[o].variedad.toString();
-    //       self.amountTotal += parseInt(items[o].amount);
+    //       self.amountTotal += parseInt(items[o].cantidad);
     //       if (!c[name]) {
     //         c[name] = 0;
     //       }
     //       c[name] += parseInt(items[o].cantidad);
     //     }
     //   }
-
+    //   var n = [];
+    //   for (var i in c) {
+    //     n.push({ name: i, amount: c[i] });
+    //   }
+    //   n.sort(function(a, b) {
+    //     var textA = a.name.toUpperCase();
+    //     var textB = b.name.toUpperCase();
+    //     return textA < textB ? -1 : textA > textB ? 1 : 0;
+    //   });
+    //   this.count = n;
+    //   return this.totalSales;
+    // }
     //         this.cart = this.productList.filter(function (item) {
     //             return item.total > 0;
     //         });
@@ -303,7 +338,17 @@ export default {
 </script>
 
 <style scoped>
-
+.header{
+  background-color: lightgrey;
+  border-radius: 10px;
+  width: 86%;
+}
+.header .logo{
+  display: flex;
+}
+.navButtons{
+  display: flex;
+}
 .confirmation__button {
   background: #cf2218;
   font-weight: 700;
