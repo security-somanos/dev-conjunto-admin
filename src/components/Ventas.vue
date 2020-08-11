@@ -251,7 +251,7 @@ export default {
       let updateObject = {
         "0/total": saleTotal,
         // "0/cantidadTotal": cantidadTotal,
-        [c]: item.cantidad,
+        // [c]: item.cantidad,
         [p]: item.pago,
         [n]: event.target.value
       };

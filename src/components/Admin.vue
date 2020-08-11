@@ -250,10 +250,10 @@
         </td>
         <td>
           <div class="view">
-            <input id="active" type="checkbox" v-model="active" disabled/>
+            <input type="checkbox" v-model="active" disabled/>
           </div>
           <div class="edit">
-            <input id="active" type="checkbox" v-model="active"/>
+            <input type="checkbox" v-model="active" />
           </div>
         </td>
         <td>
@@ -465,24 +465,7 @@ td {
   background-color: #e4e4e4cf;
   }
 
-input {
-  padding: 5px;
-  margin: 10px 5px 10px 5px;
-}
-input#price,input#priceC,input#cantidad,
-input#stock {
-  padding: 5px;
-  width: 40px;
-}
-input.number{
-  padding: 5px;
-  width: 40px;
-}
-select {
-  height: 27px;
-  padding: 0px 10px;
-  margin: 10px 5px 10px 5px;
-}
+
 .productBox button,
 .productBox select {
   height: 30px;
@@ -684,7 +667,7 @@ select.unidad{
     position: relative;
     left: 0px;
 }
-@media (max-width: 680px) {
+@media (max-width: 350px) {
   #app {
     font-family: sans-serif;
     font-size: 12px;
@@ -696,6 +679,32 @@ select.unidad{
     max-width: 1080px;
     margin: 0 auto;
   }
+  #nav {
+    height: 30px;
+    margin-top: 30px;
+  }
+    #prodType {
+    margin-left: 20px;
+  }
+
+    input {
+  padding: 5px;
+  margin: 10px 5px 10px 5px;
+  }
+ input#price,input#priceC,input#cantidad,
+ input#stock {
+   padding: 5px;
+   width: 40px;
+ }
+ input.number{
+   padding: 5px;
+   width: 40px;
+ }
+select {
+  height: 27px;
+  padding: 0px 10px;
+  margin: 10px 5px 10px 5px;
+}
   .productImage {
     height: 140px;
     width: auto;
@@ -717,23 +726,7 @@ select.unidad{
     transition: background 0.3s ease-in, min-width 0.1s linear,
       box-shadow 0.2s ease-in;
   }
-  #nav {
-    height: 30px;
-    margin-top: 30px;
-  }
 
-  #prodType {
-    margin-left: 20px;
-  }
-
-  input {
-    padding: 5px;
-  }
-  input#price,input#priceC,
-  input#stock {
-    padding: 5px;
-    width: 40px;
-  }
   select {
     height: 29px;
     padding: 0px 0px 10px 2px;
