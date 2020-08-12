@@ -14,14 +14,21 @@
       <option value="amount">Cantidad</option>
     </select>
     <div class="count">
-      <div
-        class="row"
-        v-for="item in orderBy(salesTotalCount, salesType)"
-        v-bind:key="item['.key']"
-      >
-        <div class="name">{{item.name}}</div>
-        <div class="amount">{{item.amount}}</div>
-      </div>
+    <table class="totales">
+      <tr>
+        <th>Variedad</th>
+        <th>Unidad Mayorista</th>
+        <th>Cantidades Vendidas</th>
+        <th>Totales Vendidos</th>
+      </tr>
+      <tr v-for="item in orderBy(salesTotalCount, salesType)"
+        v-bind:key="item['.key']">
+        <td>{{item.name}}</td>  
+        <td>{{item.cantidadMay}} {{item.unidadMay}} *</td>
+        <td>{{item.amount}}</td>
+        <td>= totales vendidos</td>
+      </tr>
+    </table>
     </div>
   </div>
 </template>
@@ -52,20 +59,29 @@ export default {
       var s = self.sales;
       var c = {};
       self.totalSales = 0;
+
       for (var i in s) {
         var items = s[i][0].items;
+        //se trae todas las compras.
         for (var o in items) {
           var name = items[o].variedad.toString();
+
           self.totalSales += parseInt(items[o].pago);
+
+           // console.log(name)
           if (!c[name]) {
             c[name] = 0;
           }
+          console.log(c[name])
           c[name] += parseInt(items[o].cantidad);
+         // c[cantidadMay] = parseInt(items[o].cantidadMay)
         }
       }
       var n = [];
       for (var i in c) {
-        n.push({ name: i, amount: c[i] });
+        n.push({ name: i, amount: c[i], });
+       // console.log(i)
+       // console.log(c[i])
       }
       n.sort(function(a, b) {
         var textA = a.name.toUpperCase();
@@ -80,6 +96,19 @@ export default {
 </script>
 
 <style scoped>
+
+th {
+    padding: 2px;
+  }
+td {
+  padding: 17px;
+  overflow: hidden;
+}
+.totales tr:nth-child(even){
+  background-color: #8eb4f6;
+  color:black
+  }
+
 #nav {
   height: 30px;
   margin-top: 30px;

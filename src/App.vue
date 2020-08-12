@@ -58,7 +58,7 @@ body {
 #app {
   font-size: 14px;
   text-align: center;
-  color: rebeccapurple;
+  color: #2c3e50;
   margin-top: 60px;
   max-width: 1080px;
   margin: 0 auto;
@@ -92,16 +92,19 @@ a {
   padding: 10px 20px;
   margin: 0px 5px;
   text-decoration: none;
-  font-weight: bold;
-  background-color: #a53179;
+  font-weight: bold; 
+  background-color: #8eb4f6;
   color: white;
   font-size: 14px;
   border-radius: 8px;
 }
+a#comu{
+  background-color: #a53179;
+}
   .roundBtn {
   height: 34px;
   width: 66px;
-  background-color: #a53179;
+  background-color: #8eb4f6;
   border: none;
   color: white;
   position: relative;

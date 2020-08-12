@@ -250,10 +250,10 @@
         </td>
         <td>
           <div class="view">
-            <input type="checkbox" v-model="active" disabled/>
+            <input type="checkbox" v-model="product.active" disabled/>
           </div>
           <div class="edit">
-            <input type="checkbox" v-model="active" />
+            <input type="checkbox" v-model="product.active" />
           </div>
         </td>
         <td>
@@ -487,7 +487,7 @@ select.unidad{
   width: 0;
   height: 0;
   border-bottom: 10px solid transparent;
-  border-top: 10px solid #a53179;
+  border-top: 10px solid #8eb4f6;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
 }
@@ -496,7 +496,7 @@ select.unidad{
   width: 0;
   height: 0;
   border-bottom: 10px solid transparent;
-  border-top: 10px solid #a53179;
+  border-top: 10px solid #8eb4f6;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
 }
@@ -505,7 +505,7 @@ select.unidad{
   width: 0;
   height: 0;
   border-top: 10px solid transparent;
-  border-bottom: 10px solid #a53179;
+  border-bottom: 10px solid #8eb4f6;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
 }
@@ -543,11 +543,11 @@ select.unidad{
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background-color: #a531797a;
+  background-color: #8eb4f6;
   margin-bottom: 20px;
   box-shadow: 0 11px 22px rgb(0 0 23);
   padding: 20px 10px;
-  border-left: 2px solid #a53179;
+  border-left: 2px solid #8eb4f6;
   flex-wrap: wrap  ;
   min-width: 966px;
   border-radius: 18px;
@@ -635,7 +635,7 @@ select.unidad{
 .greenBtn {
   height: 34px;
   width: 66px;
-  background-color: #a53179;
+  background-color: #5b64b4;
   border: none;
   color: white;
   position: relative;
