@@ -8,3 +8,7 @@
     </nav>
   </div>
 </template>
+<style lang="scss">
+
+  @import '../custom.scss';
+</style>

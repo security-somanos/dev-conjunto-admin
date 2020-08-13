@@ -8,7 +8,7 @@
       <router-link to="/totals">Totales</router-link>
       <router-link to="/login" id="logout" v-on:click.native="logout()" replace>Logout</router-link>
     </div>
-    <h1>Total</h1>
+    <h1>Total {{totalSales}}</h1>
     <select id="category" v-model="salesType">
       <option value="type">Nombre</option>
       <option value="amount">Cantidad</option>
@@ -45,7 +45,7 @@ export default {
       totalSales: 0,
       pago: "",
       salesType: "amount",
-      search:null,
+      search: null,
     };
   },
   firebase: {
@@ -62,26 +62,42 @@ export default {
 
       for (var i in s) {
         var items = s[i][0].items;
+        // console.log(items)
         //se trae todas las compras.
         for (var o in items) {
+        console.log(items[o])
           var name = items[o].variedad.toString();
+          if (items[o].cantidadMay)
+         // var cantidadMay = items[o].cantidadMay.toString();
+          console.log('nombre')
+          console.log(name)
+          console.log(items[o])
+          //console.log(c)
+          // if (!c[name]) {
+          //   c[cantidad]
+          // }
+          //console.log(items[o].cantidadMay)
+          //  var cantidadMay = items[o].cantidadMay.toString();
 
           self.totalSales += parseInt(items[o].pago);
 
-           // console.log(name)
           if (!c[name]) {
             c[name] = 0;
           }
-          console.log(c[name])
+          //console.log(c[name])
           c[name] += parseInt(items[o].cantidad);
-         // c[cantidadMay] = parseInt(items[o].cantidadMay)
+          //  c[cantidadMay] = parseInt(items[o].cantidadMay)
+          //  console.log(c[cantidadMay])
         }
       }
       var n = [];
+     // console.log(c)
       for (var i in c) {
-        n.push({ name: i, amount: c[i], });
-       // console.log(i)
-       // console.log(c[i])
+        n.push({ 
+          name: i, 
+          amount: c[i], 
+          //cantidadM: 
+          });
       }
       n.sort(function(a, b) {
         var textA = a.name.toUpperCase();

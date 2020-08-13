@@ -1,13 +1,13 @@
 import 'firebase'
 import Vue from 'vue'
-//import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
+import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
 import App from './App.vue'
 import Vue2Filters from 'vue2-filters'
 import { rtdbPlugin } from 'vuefire'
 import vueHeadful from 'vue-headful'
 import VueRouter from 'vue-router'
 
-//import './custom.scss'
+import './custom.scss'
 import Navigation from '@/components/Navigation'
 import HomeNavigation from '@/components/HomeNavigation'
 import Login from "./components/Login"
@@ -19,8 +19,8 @@ import Totals from './components/Totals'
 
 
 Vue.component('vue-headful', vueHeadful)
-//Vue.use(BootstrapVue)
-//Vue.use(BootstrapVueIcons)
+Vue.use(BootstrapVue)
+Vue.use(BootstrapVueIcons)
 Vue.use(VueRouter)
 Vue.use(Vue2Filters)
 Vue.use(rtdbPlugin)

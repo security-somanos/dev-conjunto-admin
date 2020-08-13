@@ -22,8 +22,135 @@
     </div>
 
     <div class="sale" v-for="sale in filterBy(sales, search)" v-bind:key="sale['.key']">
-      <div class="userData" @click="toggleCollapse($event)">
-      <div class="line status" >
+      <div class="userData" @click="toggleCollapse($event)"><div>
+    <b-card-group deck>
+      <b-card bg-variant="light">
+        <div class="line status" >
+           <input type="radio" id="Pendiente" value="pendiente" v-model="sale[0].status"
+            @change="updateUserInfo($event, sale['.key'], '0/status')">
+           <label for="Pendiente">Pendiente</label>
+           <input type="radio" id="Entregado" value="entregado" v-model="sale[0].status"
+            @change="updateUserInfo($event, sale['.key'], '0/status')">
+           <label for="Entregado">Entregado</label>
+          </div>
+          <b-form-group
+            label-cols-sm="3"
+            label="Fecha:"
+            label-align-sm="right"
+            label-for="nested-date">
+            <b-form-input id="nested-date" type="text"
+              v-model="sale[0].date"
+              @change="updateUserInfo($event, sale['.key'], '0/date')"></b-form-input>
+          </b-form-group>
+          <b-form-group
+            label-cols-sm="3"
+            label="Nombre:"
+            label-align-sm="right"
+            label-for="nested-name">
+            <b-form-input id="nested-name" type="text"
+              v-model="sale[0].name"
+              @change="updateUserInfo($event, sale['.key'], '0/name')"></b-form-input>
+          </b-form-group>
+          <b-form-group
+            label-cols-sm="3"
+            label="Dirección:"
+            label-align-sm="right"
+            label-for="nested-address">
+            <b-form-input id="nested-direccion"
+              type="text"
+              v-model="sale[0].address"
+              @change="updateUserInfo($event, sale['.key'], '0/address')"></b-form-input>
+          </b-form-group>
+          <b-form-group
+            label-cols-sm="3"
+            label="Localidad:"
+            label-align-sm="right"
+            label-for="nested-localidad">
+            <b-form-input id="nested-localidad"
+              type="text"
+              v-model="sale[0].localidad"
+              @change="updateUserInfo($event, sale['.key'], '0/localidad')"></b-form-input>
+          </b-form-group>
+          <b-form-group
+            label-cols-sm="3"
+            label="Cel:"
+            label-align-sm="right"
+            label-for="nested-cel">
+            <b-form-input id="nested-cel"
+              type="text"
+              v-model="sale[0].phone"
+              @change="updateUserInfo($event, sale['.key'], '0/phone')"></b-form-input>
+          </b-form-group>
+          <b-form-group
+            label-cols-sm="3"
+            label="Nodo:"
+            label-align-sm="right"
+            label-for="nested-nodo">
+            <b-form-input id="nested-nodo"
+              type="text"
+              v-model="sale[0].email"
+              @change="updateUserInfo($event, sale['.key'], '0/email')"></b-form-input>
+          </b-form-group>
+      </b-card>
+      <b-card bg-variant="light">
+        <b-form-group
+          label-cols-sm="3"
+          label="Total Venta:"
+          label-align-sm="right"
+          label-for="nested-totalventa">
+          <b-form-input id="nested-totalventa"
+            type="text"
+            v-model="sale[0].total"
+            @change="updateUserInfo($event, sale['.key'], '0/total')"></b-form-input>
+        </b-form-group>
+        <b-form-group
+          label-cols-sm="3"
+          label="Total Cantidad:"
+          label-align-sm="right"
+          label-for="nested-cantidad">
+          <b-form-input id="nested-cantidad"
+            type="text"
+            v-model="sale[0].totalCantidad"
+            @change="updateUserInfo($event, sale['.key'], '0/totalCantidad')"></b-form-input>
+        </b-form-group>
+        <b-form-group
+          label-cols-sm="3"
+          label="Total Costo:"
+          label-align-sm="right"
+          label-for="nested-totalcosto">
+          <b-form-input id="nested-totalcosto"
+            type="text"
+            v-model="sale[0].totalCosto"
+            @change="updateUserInfo($event, sale['.key'], '0/totalCosto')"></b-form-input>
+        </b-form-group>
+        <b-form-group
+          label-cols-sm="3"
+          label="Total Venta:"
+          label-align-sm="right"
+          label-for="nested-totalventa">
+          <b-form-input id="nested-totalventa"
+            type="text"
+            v-model="sale[0].pago"
+            @change="updateUserInfo($event, sale['.key'], '0/pago')"></b-form-input>
+        </b-form-group>
+        <b-form-group
+          label-cols-sm="3"
+          label="Notas:"
+          label-align-sm="right"
+          label-for="textarea-notas">
+          <b-form-textarea
+             id="textarea-notas"
+             v-model="sale[0].preference"
+             @change="updateUserInfo($event, sale['.key'], '0/preference')"
+             placeholder="No hay comentarios del cliente."
+             rows="3"
+             max-rows="8"
+             no-auto-shrink></b-form-textarea>
+        </b-form-group>
+      </b-card>
+    </b-card-group>
+</div>
+      <!-- <div class="line status" >
        <input type="radio" id="Pendiente" value="pendiente" v-model="sale[0].status"
         @change="updateUserInfo($event, sale['.key'], '0/status')">
        <label for="Pendiente">Pendiente</label>
@@ -31,92 +158,42 @@
         @change="updateUserInfo($event, sale['.key'], '0/status')">
        <label for="Entregado">Entregado</label>
       </div>
-      <div class="line date">
-        <div class="lineTitle">Fecha</div>
-        <input
-          type="text"
-          v-model="sale[0].date"
-          @change="updateUserInfo($event, sale['.key'], '0/date')"/>
-      </div>
-      <div class="line name">
-        <div class="lineTitle">Nombre</div>
-        <input
-          type="text"
-          v-model="sale[0].name"
-          @change="updateUserInfo($event, sale['.key'], '0/name')"/>
-      </div>
-      <div class="line address">
-        <div class="lineTitle">Direccion</div>
-        <input
-          type="text"
-          v-model="sale[0].address"
-          @change="updateUserInfo($event, sale['.key'], '0/address')"/>
-      </div>
-      <div class="line localidad">
-        <div class="lineTitle">Localidad</div>
-        <input
-          type="text"
-          v-model="sale[0].localidad"
-          @change="updateUserInfo($event, sale['.key'], '0/localidad')"/>
-      </div>
-      <div class="line phone">
-        <div class="lineTitle">Cel</div>
-        <input
-          type="text"
-          v-model="sale[0].phone"
-          @change="updateUserInfo($event, sale['.key'], '0/phone')"/>
-      </div>
-      <div class="line email">
-        <div class="lineTitle">Nodo</div>
-        <input
-          type="text"
-          v-model="sale[0].email"
-          @change="updateUserInfo($event, sale['.key'], '0/email')"/>
-      </div>
-      <div class="line total">
-        <div class="lineTitle">Total Venta</div>
+      <div class="line">
+        <div class="line">Total Venta</div>
         <input
           type="text"
           v-model="sale[0].total"
           @change="updateUserInfo($event, sale['.key'], '0/total')"/>
       </div>
-      <div class="line total">
-        <div class="lineTitle">Total Costo</div>
+      <div class="line">
+        <div class="line">Total Costo</div>
         <input
           type="text"
           v-model="sale[0].totalCosto"
           @change="updateUserInfo($event, sale['.key'], '0/totalCosto')"/>
       </div>
-      <div class="line total">
-        <div class="lineTitle">Total Cantidad</div>
+      <div class="line">
+        <div class="line">Total Cantidad</div>
         <input
           type="text"
           v-model="sale[0].totalCantidad"
           @change="updateUserInfo($event, sale['.key'], '0/totalCantidad')"/>
       </div>
-      <div class="line pago">
-        <div class="lineTitle">Pago</div>
+      <div class="line">
+        <div class="line">Pago</div>
         <input
           type="text"
           v-model="sale[0].pago"
           @change="updateUserInfo($event, sale['.key'], '0/pago')"/>
       </div>
-      <div class="line preference">
-        <div class="lineTitle">Pref</div>
+      <div class="line">
+        <div class="line preference">Pref</div>
         <textarea
           name
-          id
           v-model="sale[0].preference"
           @change="updateUserInfo($event, sale['.key'], '0/preference')">
         </textarea>
-      </div>
-
-              <!-- <tr v-for="(item, index) in sale [0].items" v-bind:key="index">
-                <td > {{item.variedad}} </td>
-                <td contenteditable="true"> {{item.cantidad}}  </td>
-                <td > {{item.pago}} </td>
-                <td > {{item.precio}} </td>
-              </tr> -->
+      </div> -->
       <table id="pedido">
         <tr>
           <th>Nombre</th>
@@ -133,11 +210,11 @@
                 @change="updateItems($event, sale['.key'], index, 'cantidad', item, sale[0])"/>
           </td>
           <td>
-            <input type="text" id="price" v-model="item.precioMay" disabled
+            <input type="text" class="numb" v-model="item.precioMay" disabled
               @change="updateItems($event, sale['.key'], index, 'precioMay', item, sale[0])"/>
           </td>
           <td>
-            <input type="text" id="numb" v-model="item.pago" disabled
+            <input type="text" class="numb" v-model="item.pago" disabled
               @change="updateItems($event, sale['.key'], index, 'pago', item, sale[0])"/>
           </td>
           <td>
@@ -224,8 +301,6 @@ export default {
         totalCantidad += parseInt(sale.items[i].cantidad)
         totalCosto += parseInt(sale.items[i].subTotalCosto)
       }
-
-      console.log(event.target.value)
       let updateObject = {
         "0/total": saleTotal,
         "0/totalCantidad": totalCantidad,
@@ -256,8 +331,8 @@ export default {
         for (var o in items) {
           var name = items[o].variedad.toString();
           self.totalSales += parseInt(items[o].pago);
-          self.totalAmount += parseInt(items[o].cantidad)
-          self.totalCost += parseInt(items[o].precioCosto)
+          self.totalCost += (items[o].subTotalCosto > 0) ? parseInt(items[o].subTotalCosto):0;
+          self.totalAmount += parseInt(items[o].cantidad);
           if (!c[name]) {
             c[name] = 0;
           }
@@ -267,7 +342,7 @@ export default {
       var n = [];
       for (var i in c) {
         n.push({ name: i, amount: c[i] });
-      }
+      } 
       n.sort(function(a, b) {
         var textA = a.name.toUpperCase();
         var textB = b.name.toUpperCase();
@@ -276,53 +351,12 @@ export default {
       this.count = n;
       return this.totalSales;
     },
-
-    // getTotal: function () {
-    //         var s = this.sales;
-    //         var c = {};
-    //         s.amountTotal = 0;
-    //   for (var i in s) {
-    //     // Create items local.
-    //     var items = s[i][0].items;
-    //     for (var o in items) {
-    //       var name = items[o].variedad.toString();
-    //       self.amountTotal += parseInt(items[o].cantidad);
-    //       if (!c[name]) {
-    //         c[name] = 0;
-    //       }
-    //       c[name] += parseInt(items[o].cantidad);
-    //     }
-    //   }
-    //   var n = [];
-    //   for (var i in c) {
-    //     n.push({ name: i, amount: c[i] });
-    //   }
-    //   n.sort(function(a, b) {
-    //     var textA = a.name.toUpperCase();
-    //     var textB = b.name.toUpperCase();
-    //     return textA < textB ? -1 : textA > textB ? 1 : 0;
-    //   });
-    //   this.count = n;
-    //   return this.totalSales;
-    // }
-    //         this.cart = this.productList.filter(function (item) {
-    //             return item.total > 0;
-    //         });
-
-    //         for (var item in this.cart) {
-    //             this.cart[item].total = this.cart[item].amount
-    //             this.cart[item].total = parseFloat(this.cart[item].total.toFixed(2))
-    //             this.amountTotal += this.cart[item].total;
-    //             this.amountTotal = parseFloat(this.amountTotal.toFixed(2))
-    //         }
-    //     },
   }
 };
 </script>
 
 <style scoped>
 .header{
-  
   border-radius: 10px;
   width: 86%;
 }
@@ -332,6 +366,7 @@ export default {
 .navText{
   font-size: 20px;
   font-weight: bolder;
+  margin-top: 20px;
 }
 .confirmation__button {
   background: #cf2218;
@@ -390,7 +425,7 @@ table{
   box-shadow: 4px 1px 20px 5px #8eb4f6;
   position: relative;
   border-left: 2px solid #5b64b4;
-  width: 470px;
+
   border-radius: 20px;
   background-color: #8eb4f6;
 }
@@ -436,7 +471,9 @@ table{
   top: 6px;
   width: 70px;
 }
-
+#textarea{
+  width: 400px;
+}
 .count {
   min-height: 150px;
   flex-wrap: wrap;
@@ -528,20 +565,17 @@ table{
   margin-right: 2px;
   width: 200px;
 }
-input#numb{
-  color:black;
-  max-width: 38px;
-}
 input.numb{
   color:black;
-  max-width: 38px;
+  max-width: 50px;
+  min-width: 50px;
 }
 input#price{
   color:black;
   max-width: 38px;
 }
 input#amount{
-  max-width: 10px;
+  max-width: 32px;
 }
 #portal .item input {
   max-width: 38px;

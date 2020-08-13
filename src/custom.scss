@@ -1,11 +1,26 @@
 // Your variable overrides
-//$body-bg: #000;
-//$body-color: #111;
+$body-bg: #000;
+$body-color: #111;
+
+
 
 // @import 'node_modules/bootstrap-vue/src/index.scss';
 
 // Bootstrap and its default variables
-// @import 'node_modules/bootstrap/scss/bootstrap';
-// @import 'node_modules/bootstrap-vue/src/index.scss';
+@import 'node_modules/bootstrap/scss/bootstrap';
+@import 'node_modules/bootstrap-vue/src/index.scss';
+.card {
+  background-color:  #f39c12bf!important;
+}
+
+
+body{
+    background-color: white;
+}
+
+a{
+    color: whitesmoke;
+    background-color: #007bff;
+}
 //@import '~bootstrap/scss/bootstrap.scss';
 //@import '~bootstrap-vue/src/index.scss';
