@@ -148,7 +148,8 @@
       </tr>
       <tr v-for="product in orderBy(filteredProducts, prodType, prodTypeReverse)"
           v-bind:key="product['.key']"
-          v-bind:class="{ editing: productEditName == product.name, active: product.active, hidden: !toggleHide }">
+          v-bind:style="product.stock==0?'color:red':''"
+          v-bind:class="{ editing: product.edit, active: product.active, hidden: !toggleHide,}">
         <td>
           <img class="productImage" :src="product.image" alt=''/>
         </td>
@@ -384,11 +385,11 @@ export default {
     },
     setEditName(name, key) {
       productsRef.child(key).update({ edit: true });
-      this.productEditName = name;
+      //this.productEditName = name;
     },
     cancelEdit(key) {
       productsRef.child(key).update({ edit: false });
-      this.productEditName = "";
+      //this.productEditName = "";
     },
     saveEdit(product) {
       const key = product[".key"];
@@ -408,7 +409,7 @@ export default {
         active: product.active,
         amount: 0
       });
-      this.productEditName = "";
+      //this.productEditName = "";
     }
   },
   computed: {

@@ -203,7 +203,7 @@
           <th>Costo</th>
           <th>Subtotal Costo</th>
         </tr>
-        <tr v-for="(item, index) in sale [0].items" v-bind:key="index">
+        <tr v-for="(item, index) in sale [0].items" v-bind:key="index" v-bind:style="item.cantidad==0?'color:red':''">
           <td> {{item.variedad}} </td>
           <td>
             <input type="text" id="amount" v-model="item.cantidad"
