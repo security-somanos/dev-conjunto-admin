@@ -10,10 +10,11 @@ import VueRouter from 'vue-router'
 import './custom.scss'
 import Navigation from '@/components/Navigation'
 import HomeNavigation from '@/components/HomeNavigation'
-import Login from "./components/Login"
+import Login from './components/Login'
 import Admin from './components/Admin'
 import Ventas from './components/Ventas'
 import Totals from './components/Totals'
+import Historiales from './components/Historiales'
 // import 'bootstrap/dist/css/bootstrap.css'
 // import 'bootstrap-vue/dist/bootstrap-vue.css'
 
@@ -35,9 +36,13 @@ const routes = [
     path: '/ventas',
     component: Ventas
   },
-  {
+  { 
     path: '/totals',
     component: Totals
+  },
+  {
+    path: '/historiales',
+    component: Historiales
   },
   {
     path: '/login',

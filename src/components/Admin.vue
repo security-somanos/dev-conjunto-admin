@@ -7,6 +7,7 @@
      <router-link to="/admin">Productos</router-link>
      <router-link to="/ventas">Pedidos</router-link>
      <router-link to="/totals">Totales</router-link>
+     <router-link to="/historiales">HIst</router-link>
      <router-link to="/login" id="logout" v-on:click.native="logout()" replace>Logout</router-link>
     </div>
     <h1>Admin</h1>
