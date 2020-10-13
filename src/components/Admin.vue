@@ -282,7 +282,7 @@ import { db } from "../firebase";
 import Vue2Filters from "vue2-filters";
 import axios from "axios";
 import vueConfirmationButton from "vue-confirmation-button";
-const productsRef = db.ref("products/mayorista");
+const productsRef = db.ref("products");
 
 export default {
   data() {

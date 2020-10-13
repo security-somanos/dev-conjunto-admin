@@ -58,6 +58,7 @@ export default {
       var self = this;
       var s = self.sales;
       var c = {};
+      var totalList = {}
       self.totalSales = 0;
 
       for (var i in s) {
@@ -65,38 +66,44 @@ export default {
         // console.log(items)
         //se trae todas las compras.
         for (var o in items) {
-        console.log(items[o])
           var name = items[o].variedad.toString();
-          if (items[o].cantidadMay)
-         // var cantidadMay = items[o].cantidadMay.toString();
-          console.log('nombre')
-          console.log(name)
-          console.log(items[o])
-          //console.log(c)
-          // if (!c[name]) {
-          //   c[cantidad]
-          // }
-          //console.log(items[o].cantidadMay)
-          //  var cantidadMay = items[o].cantidadMay.toString();
+          // var cantidadMay = items[o].cantidadMay.toString()
+          // var unidadMay = items[o].unidadMay.toString()
+          // if (items[o].cantidadMay && items[o].unidadMay){}
+        
+          // console.log('nombre')
+          // console.log(name)
+          // console.log(items[o].cantidadMay)
 
           self.totalSales += parseInt(items[o].pago);
-
+          console.log(name)
           if (!c[name]) {
             c[name] = 0;
           }
-          //console.log(c[name])
+          // console.log(c)
           c[name] += parseInt(items[o].cantidad);
+          // c[name].cantidadMay = parseInt(items[o].cantidadMay)
+          // c[name].unidadMay = parseInt(items[o].unidadMay)
           //  c[cantidadMay] = parseInt(items[o].cantidadMay)
           //  console.log(c[cantidadMay])
         }
       }
+//         for (var l in c){
+
+//           totalList = [{
+//             name: l,
+//             amount: c[l],
+//           }]
+// console.log(totalList)
+//         }
       var n = [];
-     // console.log(c)
       for (var i in c) {
+        // console.log([c])
         n.push({ 
           name: i, 
           amount: c[i], 
-          //cantidadM: 
+          // cantidadMay: cantidadMay[i],
+          // unidadMay:  unidadMay[i],
           });
       }
       n.sort(function(a, b) {

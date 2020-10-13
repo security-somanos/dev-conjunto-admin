@@ -150,50 +150,6 @@
       </b-card>
     </b-card-group>
 </div>
-      <!-- <div class="line status" >
-       <input type="radio" id="Pendiente" value="pendiente" v-model="sale[0].status"
-        @change="updateUserInfo($event, sale['.key'], '0/status')">
-       <label for="Pendiente">Pendiente</label>
-       <input type="radio" id="Entregado" value="entregado" v-model="sale[0].status"
-        @change="updateUserInfo($event, sale['.key'], '0/status')">
-       <label for="Entregado">Entregado</label>
-      </div>
-      <div class="line">
-        <div class="line">Total Venta</div>
-        <input
-          type="text"
-          v-model="sale[0].total"
-          @change="updateUserInfo($event, sale['.key'], '0/total')"/>
-      </div>
-      <div class="line">
-        <div class="line">Total Costo</div>
-        <input
-          type="text"
-          v-model="sale[0].totalCosto"
-          @change="updateUserInfo($event, sale['.key'], '0/totalCosto')"/>
-      </div>
-      <div class="line">
-        <div class="line">Total Cantidad</div>
-        <input
-          type="text"
-          v-model="sale[0].totalCantidad"
-          @change="updateUserInfo($event, sale['.key'], '0/totalCantidad')"/>
-      </div>
-      <div class="line">
-        <div class="line">Pago</div>
-        <input
-          type="text"
-          v-model="sale[0].pago"
-          @change="updateUserInfo($event, sale['.key'], '0/pago')"/>
-      </div>
-      <div class="line">
-        <div class="line preference">Pref</div>
-        <textarea
-          name
-          v-model="sale[0].preference"
-          @change="updateUserInfo($event, sale['.key'], '0/preference')">
-        </textarea>
-      </div> -->
       <table id="pedido">
         <tr>
           <th>Nombre</th>
@@ -233,7 +189,7 @@
         </vue-confirmation-button>
         <button style="margin-bottom:40px;" @click="scrollTop">Volver</button>
     </div>
-  </div>  
+  </div>
   </div>
 </template>
 
