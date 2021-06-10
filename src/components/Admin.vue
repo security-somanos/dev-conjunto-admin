@@ -152,7 +152,15 @@
           v-bind:style="product.stock==0?'color:red':''"
           v-bind:class="{ editing: product.edit, active: product.active, hidden: !toggleHide,}">
         <td>
-          <img class="productImage" :src="product.image" alt=''/>
+          <div v-if="product.image != '' " >
+            <img class="productImage" :src="product.image" alt=''/>
+            <button style="margin-left: 20px;" @click="deleteImage(product['.key'])">Borrar imagen</button>
+          </div>
+          <div v-else>
+          <input id="image" style="display" type="file"
+              ref="imageSelect2" @change="onFileSelected2($event, product['.key'])"/>
+            <!--<button @click="$refs.imageSelect2.click()">Subir Imagen</button>-->
+            </div>
         </td>
         <td>
           <div class="view">{{product.name}}</div>
@@ -279,10 +287,12 @@
 
 <script >
 import { db } from "../firebase";
+import { cloudStorage } from "../firebase";
 import Vue2Filters from "vue2-filters";
 import axios from "axios";
 import vueConfirmationButton from "vue-confirmation-button";
 const productsRef = db.ref("products");
+const storageRef = cloudStorage.ref();
 
 export default {
   data() {
@@ -316,14 +326,57 @@ export default {
     "vue-confirmation-button": vueConfirmationButton,
   },
   firebase: {
-    products: productsRef
+    products: productsRef,
+	images: storageRef
   },
   mixins: [Vue2Filters.mixin],
   methods: {
+    async updateImage(){
+      debugger;
+      var retUrl = "";
+      storageRef.child("imagenes/" + this.selectedFile.name).put(this.selectedFile).then((snapshot) => {
+		  console.log('Imagen cargada');
+      storageRef.child("imagenes/" + this.selectedFile.name).getDownloadURL().then((url) => {
+        console.log("URL: " + url);
+        this.image = url;
+        retUrl = url;
+      });
+		}); 
+    return retUrl;
+    },
     onFileSelected(event) {
       this.selectedFile = event.target.files[0];
+      
+    },
+    async onFileSelected2(event, key) {
+      console.log(key);
+      this.selectedFile = event.target.files[0];
+
+      storageRef.child("imagenes/" + this.selectedFile.name).put(this.selectedFile).then((snapshot) => {
+		  console.log('Imagen cargada');
+        storageRef.child("imagenes/" + this.selectedFile.name).getDownloadURL().then((url) => {
+          productsRef.child(key).update({
+            image: url
+          });
+        });
+      });
+    },
+    deleteImage(key) {
+      productsRef.child(key).update({
+        image: ""
+      });
     },
     onUpload() {
+	  debugger;
+	  storageRef.child("imagenes/" + this.selectedFile.name).put(this.selectedFile).then((snapshot) => {
+		  console.log('Imagen cargada');
+      storageRef.child("imagenes/" + this.selectedFile.name).getDownloadURL().then((url) => {
+        console.log("URL: " + url);
+        this.image = url;
+        this.submitProduct();
+      });
+		});
+	  return;
       const fd = new FormData();
       this.image =
         "https://storage.cloud.google.com/el-conjunto.appspot.com/" +
