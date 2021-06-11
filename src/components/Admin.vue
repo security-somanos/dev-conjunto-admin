@@ -102,10 +102,17 @@
           </td>
         </tr>
         <tr>
-          <th>Venta Mayorista
-          </th>
+          <th>Venta Mayorista</th>
+          <th>Venta Minorista</th>
         </tr>
-        <tr><td><input class="number" type="text" v-model="priceMay" /></td></tr>
+          <tr>
+            <td><input class="number" type="text" v-model="priceMay" /></td>
+            <td><input class="number" type="text" v-model="priceMin" /></td>
+          </tr>
+        <tr>
+          
+        </tr>
+        <tr></tr>
       </table>
     </div>
 
@@ -143,6 +150,7 @@
         <th>Categoria</th>
         <th>Subcategoria</th>
         <th>Venta May.</th>
+        <th>Venta Min.</th>
         <th>Active</th>
         <th>Editar</th>
         
@@ -256,6 +264,14 @@
           </div>
           <div class="edit">
             <input class="number" type="text" v-model="product.priceMay"/>
+          </div>
+        </td>
+        <td>
+          <div class="view">
+            ${{product.priceMin}}
+          </div>
+          <div class="edit">
+            <input class="number" type="text" v-model="product.priceMin"/>
           </div>
         </td>
         <td>
@@ -405,6 +421,7 @@ export default {
         productor: this.productor,
         priceCosto: this.priceCosto,
         priceMay: this.priceMay,
+        priceMin: this.priceMin,
         stock: this.stock,
         active: this.active,
         amount: 0
@@ -457,6 +474,7 @@ export default {
         type: product.type,
         subtype: product.subtype,
         priceMay: product.priceMay,
+        priceMin: product.priceMin,
         priceCosto: product.priceCosto,
         stock: product.stock,
         productor: product.productor,
