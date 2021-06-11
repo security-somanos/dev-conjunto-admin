@@ -6,7 +6,8 @@
         src="https://storage.cloud.google.com/el-conjunto.appspot.com/icons/logoconjuro.png" alt=""/>
       <div class="navButtons">
         <router-link to="/admin">Productos</router-link>
-        <router-link to="/ventas">Pedidos</router-link>
+        <router-link to="/ventas">Pedidos mayoristas</router-link>
+        <router-link to="/ventasminoristas">Pedidos minoristas</router-link>
         <router-link to="/totals">Totales</router-link>
         <router-link to="/login" id="logout" v-on:click.native="logout()" replace>Logout</router-link>
       </div>

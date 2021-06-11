@@ -5,7 +5,8 @@
      src="https://storage.cloud.google.com/el-conjunto.appspot.com/icons/logoconjuro.png" alt="">
     <div id="nav">
      <router-link to="/admin">Productos</router-link>
-     <router-link to="/ventas">Pedidos</router-link>
+     <router-link to="/ventas">Pedidos mayoristas</router-link>
+     <router-link to="/ventasminoristas">Pedidos minoristas</router-link>
      <router-link to="/totals">Totales</router-link>
      <router-link to="/historiales">HIst</router-link>
      <router-link to="/login" id="logout" v-on:click.native="logout()" replace>Logout</router-link>
@@ -84,8 +85,7 @@
           </td>
           <td>
            <select id="category" v-model="view">
-             <option disable value="Todas las paginas"> Seleccionar Pagina</option>
-             <option value="Todas">Todas las paginas</option>
+             <option  value="Todas">Todas las paginas</option>
              <option value="Comunitaria">Comunitaria</option>
              <option value="Mayorista">Mayorista</option>
              <option value="Vrde">Vrde</option>
@@ -183,7 +183,6 @@
           <div class="edit">
             Vistas
            <select id="category" v-model="product.view">
-             <option disabled value> Seleccionar Pagina</option>
              <option value="Todas">Todas las paginas</option>
              <option value="Comunitaria">Comunitaria</option>
              <option value="Mayorista">Mayorista</option>
@@ -315,7 +314,7 @@ export default {
     return {
       search: "",
       name: "",
-      view: "",
+      view: "Todas",
       unidadM: "",
       unidadMin: "",
       productor: "",

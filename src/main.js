@@ -13,6 +13,7 @@ import HomeNavigation from '@/components/HomeNavigation'
 import Login from './components/Login'
 import Admin from './components/Admin'
 import Ventas from './components/Ventas'
+import VentasMinoristas from './components/VentasMinoristas'
 import Totals from './components/Totals'
 import Historiales from './components/Historiales'
 // import 'bootstrap/dist/css/bootstrap.css'
@@ -35,6 +36,10 @@ const routes = [
   {
     path: '/ventas',
     component: Ventas
+  },
+  {
+    path: '/ventasminoristas',
+    component: VentasMinoristas
   },
   { 
     path: '/totals',
