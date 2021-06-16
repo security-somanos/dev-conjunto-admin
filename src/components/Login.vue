@@ -1,6 +1,6 @@
 <template>
   <div id="login">
-    <vue-headful title="Mayorista - Ingreso" description="Ingreso"/>
+    <vue-headful title="Ingreso Back" description="Ingreso"/>
     <img style="height:100px;margin:0 auto;margin-bottom:20px;" src="https://storage.cloud.google.com/el-conjunto.appspot.com/icons/logoconjuro.png" alt="">
     <h1>Admin Mayorista</h1>
     <input type="text" name="username" v-model="input.username" placeholder="Username"/>
